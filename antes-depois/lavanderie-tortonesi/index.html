@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Lavanderie Tortonesi — Prima e Dopo</title>
+<style>
+  :root{
+    --bg:#14171c;
+    --panel:#1c2028;
+    --border:#2c313b;
+    --ink:#f2f3f5;
+    --ink-muted:#9aa1ac;
+    --accent:#d9a441;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+  }
+  header{
+    padding:28px 24px 20px;
+    text-align:center;
+    border-bottom:1px solid var(--border);
+  }
+  header h1{
+    margin:0 0 8px;
+    font-size:1.5rem;
+  }
+  header p{
+    margin:0;
+    color:var(--ink-muted);
+    font-size:.95rem;
+  }
+  .compare{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:var(--border);
+  }
+  @media (max-width:900px){
+    .compare{grid-template-columns:1fr;}
+  }
+  .panel{
+    background:var(--panel);
+    display:flex;
+    flex-direction:column;
+  }
+  .panel-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:14px 18px;
+    border-bottom:1px solid var(--border);
+  }
+  .panel-label{
+    font-weight:700;
+    font-size:.8rem;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+  }
+  .panel.prima .panel-label{color:var(--ink-muted);}
+  .panel.dopo .panel-label{color:var(--accent);}
+  .panel-head a{
+    font-size:.82rem;
+    color:var(--ink-muted);
+    text-decoration:none;
+    border:1px solid var(--border);
+    border-radius:6px;
+    padding:5px 10px;
+  }
+  .panel-head a:hover{color:var(--ink);border-color:var(--ink-muted);}
+  .frame-wrap{
+    position:relative;
+    width:100%;
+    height:80vh;
+    min-height:480px;
+    background:#0b0d10;
+  }
+  iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+  }
+  footer{
+    padding:18px 24px 28px;
+    text-align:center;
+    color:var(--ink-muted);
+    font-size:.8rem;
+  }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1>Lavanderie Tortonesi — Prima e Dopo</h1>
+    <p>Comparação entre o site anterior e a nova proposta desenvolvida pela Coeso Digital.</p>
+  </header>
+
+  <div class="compare">
+    <div class="panel prima">
+      <div class="panel-head">
+        <span class="panel-label">Prima</span>
+        <a href="antes/index.html" target="_blank" rel="noopener">Apri a schermo intero ↗</a>
+      </div>
+      <div class="frame-wrap">
+        <iframe src="antes/index.html" title="Sito precedente — Lavanderie Tortonesi" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="panel dopo">
+      <div class="panel-head">
+        <span class="panel-label">Dopo</span>
+        <a href="https://matecoelho.github.io/lavanderie-tortonesi/" target="_blank" rel="noopener">Apri a schermo intero ↗</a>
+      </div>
+      <div class="frame-wrap">
+        <iframe src="https://matecoelho.github.io/lavanderie-tortonesi/" title="Nuova proposta — Lavanderie Tortonesi" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    Materiale di supporto Coeso Digital — non indicizzato.
+  </footer>
+
+</body>
+</html>

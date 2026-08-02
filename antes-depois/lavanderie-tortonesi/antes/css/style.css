@@ -1,0 +1,401 @@
+﻿/* 
+Custom CSS for...
+'Modern Business' HTML Theme by Start Bootstrap
+
+All Start Bootstrap themes are licensed under Apache 2.0. 
+For more info and more free Bootstrap 3 HTML themes, visit http://startbootstrap.com!
+*/
+
+/* Global Styles */
+
+html, body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-weight:400;
+}
+
+body {font-family: 'Roboto', sans-serif;  font-weight:400;}
+
+.img-home-portfolio,
+.img-customer,
+.portfolio-item {
+  margin-bottom: 30px;
+}
+
+.tab-pane {
+  margin-top: 15px;
+}
+
+/* Page Sections */
+.section,
+.section-colored {
+  padding: 0px 0;
+}
+
+.section-colored { background-image:url(../images/bg-bottom.jpg); background-repeat: repeat-x;
+ /* change this to change the background color of a colored section */
+}
+
+.sidebar {
+  margin-top: 40px;
+}
+
+.sidebar ul {
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid #cccccc;
+}
+
+/* Half Page Height Carousel Customization */
+.carousel {
+  height: 50%;
+}
+
+.item,
+.active,
+.carousel-inner {
+  height: 100%;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+.breadcrumb {
+    background-color: transparent;
+    border-radius:0px;
+    list-style: none outside none;
+    margin-bottom: 10px;
+    padding: 0px 15px;
+	font-size:14px !important;
+}
+/* Social Icons Styles */
+.list-social-icons {
+  margin-bottom: 45px;
+}
+
+.tooltip-social a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.facebook-link a:hover {
+  color: #3b5998;
+}
+
+.linkedin-link a:hover {
+  color: #007fb1;
+}
+
+.twitter-link a:hover {
+  color: #39a9e0;
+}
+
+.google-plus-link a:hover {
+  color: #d14836;
+}
+
+/* Service Page Styles */
+.service-icon {
+  font-size: 50px;
+}
+
+/* 404 Page Styles */
+.error-404 {
+  font-size: 8em;
+}
+
+/* Pricing Page Styles */
+.price {
+  font-size: 4em;
+}
+
+.price-cents {
+  vertical-align: super;
+  font-size: 50%;
+}
+
+.price-month {
+  font-size: 35%;
+  font-style: italic;
+}
+
+/* Footer Styles */
+footer {
+  margin:0px;
+}
+.navbar {
+    border-radius: 0px;
+	margin-bottom:0px;
+}
+
+.margintop-10 {margin-top:10px;}
+.margintop-20 {margin-top:20px;}
+.margintop-30 {margin-top:30px;}
+.margintop-40 {margin-top:40px;}
+.margintop-50 {margin-top:50px;}
+.margintop-60 {margin-top:60px;}
+.marginbottom-10 {margin-bottom:10px;}
+.marginbottom-20 {margin-bottom:20px;}
+.marginbottom-30 {margin-bottom:30px;}
+.marginbottom-40 {margin-bottom:40px;}
+.marginbottom-50 {margin-bottom:50px;}
+.marginbottom-60 {margin-bottom:60px;}
+
+
+.carousel-caption {padding-bottom:10px;}
+.carousel-caption h1{font-size:30px;margin-bottom:0px;padding-bottom:0px; line-height:90px;}
+.carousel-caption h2{font-size:16px;padding-top:0px;margin-top:0px; line-height:31px;}
+.payoff h1 {font-size:30px;color:#6f6f6f; float:none;}
+.payoff span {  display:block;color:#9b9b9b; text-align:center}
+.separatore .col-lg-5, .separatore .col-lg-2 {}
+.separatore hr {border-width: 2px 0 0; border-color:#9b9b9b;} 
+.grigio { background-image:url(../images/bg1.jpg); background-repeat:repeat; }
+.testogen{ font-size:16px;}
+.desc {font-size:14px;color:#6f6f6f;margin-top:15px;}
+.imgbox { height:234px;}
+.btn-semplice { background-color:#88aedd;color:#fff;border:none; font-size:20px; text-transform:uppercase; width:100%; border-radius:0px;}
+.btn-semplice:hover {color:#88aedd;background-color:#fff;}
+.btn-semplice a {color:#fff}
+.btn-ricerca-avanzata  { background-color:#469f5d;color:#fff;border:none; font-size:20px; text-transform:uppercase; width:100%; border-radius:0px;}
+.btn-ricerca-avanzata:hover {color:#469f5d;background-color:#fff;}
+.btn-continua { background-color:#9b9b9b;color:#fff;border:none; font-size:20px; text-transform:lowercase; border-radius:0px;}
+.box-news h2 { background-color:#6f6f6f; font-size:30px; color:#fff; text-align:center;padding-top:10px; padding-bottom:10px;text-transform:uppercase;margin-bottom:0px;}
+.prevnews { background-color:#fff;}
+.boxdescnew { background-color:#fff;padding:10px;}
+.datanews {color:#fff;background-color:#88aedd; text-align:center;}
+.seguenews {font-size:13px; font-weight:bold; color:#88aedd; text-align:right}
+.singlenews {margin-bottom:15px; float:left;}
+.servizi {font-size:22px;color:#fff;background-color:#469f5d; padding:2px; text-align:center;text-transform:uppercase;margin-bottom:10px;}
+.elenco-servizi {margin-top:20px;}
+.elenco-servizi li {list-style:none;}
+.elenco-servizi li:before {content: "■ ";color:#469f5d; font-size:18px; }
+.elenco-servizi li {color:#6f6f6f; font-size:16px;margin-bottom:10px;}
+.presentazione-agriturismi h2 { font-size:30px; color:#6f6f6f;}
+.presentazione-agriturismi h3 { font-size:30px; color:#469f5d; text-transform:uppercase; margin-top:0px; padding-top:0px;}
+.desc-presentazione {text-align:left; font-size:13px; color:#6f6f6f;}
+.btn-more { background-color:#6f6f6f;color:#fff; font-size:16px; width:auto;padding:6px;margin-bottom:20px;}
+.section-footer { background-color:#292929;}
+.box-footer ul {list-style:none;}
+.box-footer a {color:#fff;}
+.box-footer a:hover {color:#fca41d;}
+.img-footer{float:left;margin-right:30px;}
+.credits {padding-top:83px;}
+.box-footer {color:#fff;}
+.wordwrap { word-wrap: break-word;}
+
+.breadcrumb > li + li:before {
+    color: #ccc;
+    content: "/ ";
+    padding: 0 0px;
+}
+
+.list-inline > li {
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.associato { text-align:center;}
+.boxgalleria {margin-bottom:20px;background-color:#292929;padding-left:25px;padding-right:25px;border-radius: 10px 10px 10px 10px;-moz-border-radius: 10px 10px 10px 10px;-webkit-border-radius: 10px 10px 10px 10px;border: 0px solid #000000;}
+.btn-more a {color:#fff; text-decoration:none;}.btn-more a:hover {color:#fff; text-decoration:underline;}
+.schedastruttura { list-style:none;margin:0px;padding:0px;}
+.schedastruttura a{color:#469F5D; text-decoration:none;}
+.telefono {margin-top:10px;margin-bottom:10px;}
+.nomargintop {margin-top:0px;padding-top:0px;}
+.nomarginbottom {margin-bottom:0px;padding-bottom:0px;}
+#fattoriedidattiche h3 {font-size:22px; color:#88aedd;}
+.descfattorie {margin-top:20px;margin-bottom:20px;min-height:160px;}
+#fattorie h1 {color:#88aedd}
+#fattorie h2 {color:#469f5d; margin-top:0px;padding-top:0px;}.
+.pricefattoria {color:#469f5d; }
+.form-horizontal .control-label {
+    text-align: left;
+}
+.form-horizontal .form-group {margin-left:-30px;}
+.obbligatorio  {margin-left:-15px;font-size:20px; font-weight:bold;margin-top:14px;margin-bottom:30px;border-bottom:1px solid #6f6f6f;}
+#informazioni ul li{list-style:none;margin-left:-40px;padding-left:0px;}
+#informazioni ul li {margin-bottom:20px;}
+#informazioni .btn-primary {
+    background-color: #292929;
+    color:#fff;
+    border-color: #357ebd;
+    color: #fff;
+}
+#fattorie hr {border-top:1px solid #6f6f6f}
+
+.js-video { height: 0; padding-top: 5px; padding-bottom: 67.5%; margin-bottom: 10px; position: relative;overflow: hidden;}
+.js-video.widescreen { padding-bottom: 57.25%;}
+.js-video.vimeo {padding-top: 0;}
+.js-video embed, .js-video iframe, .js-video object, .js-video video {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65%;
+  position: absolute;
+}
+
+.js-mappa { height: 0; padding-top: 5px; padding-bottom: 98%; margin-bottom: 10px; position: relative;overflow: hidden;margin-top:40px;}
+.js-mappa.widescreen { padding-bottom: 57.25%;}
+.js-mappa.vimeo {padding-top: 0;}
+.js-mappa embed, .js-mappa iframe, .js-mappa object, .js-mappa video {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+
+.glyphicon {color:#333; font-size:14px !important;}
+.backlink a, .backlink a:visited {color:#333; font-size:14px !important;}
+.btninfo { margin-top:20px; text-align:center; font-weight:bold; max-width:250px;padding:10px;border-radius: 10px 10px 10px 10px;-moz-border-radius: 10px 10px 10px 10px;-webkit-border-radius: 10px 10px 10px 10px; background-color: #0C0; color:#ffffff;}
+.btninfo a {color:#ffffff; text-decoration:none;}
+.btninfo a:hover {text-decoration:underline}
+#elencoagriturismi .col-sm-7 h2 { font-size:20px;}
+#elencoagriturismi .col-xs-12 h2 { font-size:20px;}
+#elencoagriturismi .col-sm-7 h2 { font-size:20px;}
+#elencoagriturismi .col-xs-12 h2 { font-size:20px;}
+#elencoagriturismi .col-lg-5 h2 { font-size:30px;}
+#elencoagriturismi .col-sm-12 h2 { font-size:20px;}
+#elencoagriturismi h3 {color: #88aedd;font-size: 22px;}
+a.list-group-item {text-decoration:none;}
+a.list-group-item:hover { background-color:#88aedd; color:#fff;}
+.evidenza { background-color:#469f5d; color:#ffffff; padding:10px;}
+h2.evidenza { display:block; font-size:24px;}
+
+.richiesta-struttura {margin-top:30px; border-top:1px solid #469f5d;padding-top:30px;}
+#struttura {font-size:16px;}
+#struttura .marginstruttura {margin-bottom:10px;}
+#struttura h1 {font-size:22px; color:#469f5d;margin-top:0px;padding:0px;font-family: 'PT Mono',Arial;}
+#struttura h2 {font-size:22px;}
+#struttura [itemprop="name"] {font-size:20px;color:#469f5d;}
+#struttura [itemprop="address"] {margin-bottom:10px;}
+#struttura .payoff h1 {font-size:60px;color:#6f6f6f; float:none;margin-top:20px;}
+.boxblog {margin-top:30px;margin-bottom:30px;}
+.contentpreview {margin-bottom:30px;}
+.contentpreview img{ }
+.contentpreview h2 {margin:0px;padding:0px; font-size:18px;margin-bottom:12px; font-weight:bold; color:#469f5d}
+.descpreview { max-height:150px; overflow:hidden}
+.list-cat { 
+    background-color: #469f5d;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    width: 100%;
+	font-weight:bold;
+	padding:4px;
+}
+.menu-cat {margin-top:30px; list-style:none; padding-left:10px;}
+.menu-cat li {margin-bottom:12px;font-size:14px; text-decoration:underline;}
+.menu-cat li a { text-decoration:underline;color:#333;}
+.autore { text-align:right;margin-top:30px;}
+.offerte {color:#F60}
+  
+@media (max-width: 1190px){
+ }   
+
+@media (max-width: 767px) {
+  .carousel {
+    height: 70%;
+ /* increases the carousel height so it looks good on phones */
+  }
+
+.box{background-color:#fff;margin-top:25px; margin-bottom:25px;padding-bottom:25px;}
+.desc-presentazione {
+   overflow : hidden;
+   max-height:96px;
+   text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+.btn-more {margin-bottom:20px}
+.associato { text-align:center;margin-top:20px;}
+
+}
+@media (min-width:768px){
+.boxtop {padding-left:40px;padding-right:40px;}
+.box{background-color:#fff;margin-left:40px;margin-right:40px; margin-top:65px; margin-bottom:65px;padding-bottom:25px;}
+.presentazione-agriturismi {padding-left:40px; padding-right:40px;}
+.box-news {padding-left:40px;padding-right:40px;}
+.box-footer {margin-left: 40px;margin-right: 40px;margin-top:20px;margin-bottom:20px; }
+.carousel-caption h1{font-size:30px;margin-bottom:0px;padding-bottom:0px; line-height:90px;}
+.carousel-caption h2{font-size:12px;padding-top:0px;margin-top:0px; line-height:31px;}
+.btn-more {margin-bottom:20px}
+.carousel-caption h1{ font-size: 90px; line-height: 90px;margin-bottom: 0;padding-bottom: 0;}
+.carousel-caption h2{font-size:31px;padding-top:0px;margin-top:0px; line-height:31px;}
+.payoff h1 {font-size:60px;color:#6f6f6f; float:none;}
+.associato { text-align:center;margin-top:20px; display:inline;}
+.pricefattoria {color:#469f5d;margin-top:20px;margin-bottom:20px; font-size:15px;padding-bottom:20px;}
+.downloadprogramma {font-size:13px;text-align:center;}
+.aziendatit { min-height:73px;}
+}
+@media (max-width: 985px){
+	.desc-presentazione {
+   overflow : hidden;
+   max-height:96px;
+   text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+.btn-more {margin-bottom:20px}
+.img-responsive {display:inline; text-align:center;}
+}
+@media (min-width: 769px) and (max-width: 984px){
+	.desc-presentazione {
+   overflow : hidden;
+   max-height:96px;
+   text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+.btn-more {margin-bottom:20px}
+.img-responsive {display:inline; text-align:center;}
+
+
+
+}
+@media (min-width: 481px) and (max-width: 766px){
+.box{padding-left:10px;padding-right:10px;background-color:#fff;margin-top:25px; margin-bottom:25px;padding-bottom:25px;}
+.desc-presentazione {
+   overflow : hidden;
+   max-height:56px;
+   text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+.btn-more {margin-bottom:20px}
+.associato { text-align:center;margin-top:20px; display:inline;}
+.btn-semplice {margin-bottom:20px;}
+.presentazione-agriturismi h2 {font-size:20px;}
+.presentazione-agriturismi h3 {font-size:20px;}
+.credits { text-align:center;padding-top:40px;}
+.logo-bottom{margin-top:20px;}
+.box-footer ul {margin-top:20px;}
+.img-responsive {display:inline; text-align:center;}
+.navbar-nav > li:first-child {
+    float: none;
+    margin-left: 0px;
+    padding-left: 0;
+}
+}
+@media (max-width: 480px) {
+.desc-presentazione {overflow : hidden; max-height:58px; text-overflow: ellipsis;-o-text-overflow: ellipsis;}
+.elenco-servizi {margin-left:0px;padding-left:0px;}
+.elenco-servizi li {font-size:14px;}
+.btn-more {font-size:12px;margin-bottom:20px;}
+.box{padding-left:10px;padding-right:10px;background-color:#fff;margin-top:25px; margin-bottom:25px;padding-bottom:25px;}
+.btn-more {margin-bottom:20px; }
+.associato { margin-top:20px;}
+.presentazione-agriturismi h2 { font-size:20px; color:#6f6f6f;}
+.presentazione-agriturismi h3 { font-size:20px; color:#469f5d; text-transform:uppercase; margin-top:0px; padding-top:0px;}
+.associato { text-align:center;margin-top:20px; display:inline;}
+.btn-semplice {margin-bottom:20px;}
+.credits { text-align:center;padding-top:40px;}
+.logo-bottom{margin-top:20px;}
+.box-footer ul {margin-top:20px;}
+.img-responsive {display:inline; text-align:center;}
+.list-group-item{ width:100%;}
+.navbar-nav > li:first-child {
+    float: none;
+    margin-left: 0px;
+    padding-left: 0;
+}
+}
