@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /antes-depois/
+Disallow: /before-after/
