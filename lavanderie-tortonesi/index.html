@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lavanderie Tortonesi — Lavanderia industriale e restauro tappeti a Tortona</title>
+<meta name="description" content="Lavanderia industriale e restauro tappeti orientali a Tortona (AL). Dal 1960, guidata dalla terza generazione della stessa famiglia. Servizio per privati, industrie, comuni ed enti pubblici.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --color-cream:#FBF6ED;
+    --color-cream-alt:#F3EAD6;
+    --color-ink:#33302A;
+    --color-ink-muted:#6B6259;
+    --color-accent:#8A6D3B;
+    --color-accent-dark:#6B5229;
+    --color-navy:#1F3A5F;
+    --color-navy-dark:#16293F;
+    --color-white:#FFFFFF;
+    --color-border:#E5DCC8;
+    --shadow-card:0 4px 20px rgba(51,48,42,0.08);
+    --radius:14px;
+    --max-w:1180px;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth;overflow-x:hidden;}
+  body{
+    margin:0;
+    font-family:'Inter',sans-serif;
+    color:var(--color-ink);
+    background:var(--color-cream);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+    -webkit-tap-highlight-color:rgba(138,109,59,.18);
+  }
+  h1,h2,h3{
+    font-family:'Manrope',sans-serif;
+    line-height:1.15;
+    margin:0 0 .5em;
+    font-weight:800;
+    letter-spacing:-.01em;
+    text-wrap:balance;
+  }
+  .skip-link{
+    position:absolute;left:12px;top:-60px;z-index:300;
+    background:var(--color-navy);color:#fff;
+    padding:12px 18px;border-radius:8px;
+    text-decoration:none;font-weight:600;font-size:.9rem;
+    transition:top .2s ease;
+  }
+  .skip-link:focus{top:12px;}
+  p{margin:0 0 1em;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .container{max-width:var(--max-w);margin:0 auto;padding:0 24px;}
+  section{padding:88px 0;}
+  @media (max-width:640px){section{padding:56px 0;}}
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.78rem;
+    font-weight:600;
+    color:var(--color-accent);
+    margin-bottom:14px;
+    display:inline-block;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 26px;
+    border-radius:999px;
+    font-weight:600;
+    font-size:.98rem;
+    text-decoration:none;
+    cursor:pointer;
+    border:1.5px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+    min-height:44px;
+    touch-action:manipulation;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn:focus-visible{outline:3px solid var(--color-accent);outline-offset:2px;}
+  .btn-primary{background:var(--color-accent);color:var(--color-white);box-shadow:var(--shadow-card);}
+  .btn-primary:hover{background:var(--color-accent-dark);}
+  .btn-outline{background:transparent;color:var(--color-navy);border-color:var(--color-navy);}
+  .btn-outline:hover{background:var(--color-navy);color:var(--color-white);}
+  .btn-outline-light{background:transparent;color:var(--color-white);border-color:rgba(255,255,255,.6);}
+  .btn-outline-light:hover{background:rgba(255,255,255,.15);}
+  .btn-whatsapp{background:#25D366;color:#fff;box-shadow:var(--shadow-card);}
+  .btn-whatsapp:hover{background:#1DA851;}
+  svg.icon{width:20px;height:20px;flex-shrink:0;}
+
+  /* Demo banner */
+  .demo-banner{
+    position:sticky;top:0;z-index:200;
+    background:var(--color-navy-dark);
+    color:#fff;
+    text-align:center;
+    font-size:.85rem;
+    padding:9px 16px;
+    line-height:1.4;
+  }
+  .demo-banner strong{color:#F4C978;}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:190;
+    border-bottom:1px solid var(--color-border);
+  }
+  header::before{
+    content:"";
+    position:absolute;inset:0;z-index:-1;
+    background:rgba(251,246,237,.94);
+    backdrop-filter:blur(8px);
+  }
+  .demo-banner + header{top:34px;}
+  .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--max-w);margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--color-ink);font-weight:700;font-family:'Manrope',sans-serif;font-size:1.15rem;}
+  .brand img{height:40px;width:auto;border-radius:6px;}
+  nav.primary-nav{display:flex;align-items:center;gap:28px;}
+  nav.primary-nav a{text-decoration:none;font-size:.95rem;font-weight:500;color:var(--color-ink);padding:6px 2px;border-bottom:2px solid transparent;transition:border-color .15s;}
+  nav.primary-nav a:hover,nav.primary-nav a:focus-visible{border-color:var(--color-accent);}
+  .nav-cta{display:flex;align-items:center;gap:12px;}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;padding:8px;min-width:44px;min-height:44px;align-items:center;justify-content:center;}
+  .menu-toggle svg{width:26px;height:26px;}
+
+  @media (max-width:900px){
+    nav.primary-nav{
+      position:fixed;inset:0 0 0 auto;width:78%;max-width:340px;height:100%;
+      background:var(--color-cream);
+      flex-direction:column;align-items:flex-start;
+      padding:96px 32px 32px;
+      gap:22px;
+      transform:translateX(100%);
+      transition:transform .28s ease;
+      box-shadow:-8px 0 30px rgba(0,0,0,.15);
+      z-index:195;
+      overflow-y:auto;
+      overscroll-behavior:contain;
+    }
+    nav.primary-nav.open{transform:translateX(0);}
+    nav.primary-nav a{font-size:1.1rem;}
+    .menu-toggle{display:flex;}
+    .nav-cta .btn-outline{display:none;}
+    .nav-overlay{position:fixed;inset:0;background:rgba(22,20,17,.4);z-index:180;opacity:0;pointer-events:none;transition:opacity .28s ease;}
+    .nav-overlay.open{opacity:1;pointer-events:auto;}
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;
+    min-height:88vh;
+    display:flex;align-items:flex-end;
+    color:#fff;
+    overflow:hidden;
+  }
+  .hero-bg{position:absolute;inset:0;z-index:0;}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 62%;}
+  .hero-bg::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(22,25,30,.35) 0%, rgba(20,22,26,.55) 55%, rgba(15,17,20,.85) 100%);
+  }
+  .hero-content{position:relative;z-index:1;padding:64px 0 72px;}
+  .hero-content .eyebrow{
+    color:#1a1300;
+    background:rgba(244,201,120,.6);
+    font-size:1rem;
+    font-weight:800;
+    letter-spacing:.08em;
+    padding:8px 18px;
+    border-radius:999px;
+    margin-bottom:22px;
+  }
+  .hero h1{font-size:clamp(2.1rem,4.4vw,3.6rem);color:#fff;max-width:15ch;text-shadow:0 2px 18px rgba(0,0,0,.35);}
+  .hero p.lead{font-size:1.15rem;max-width:52ch;color:rgba(255,255,255,.92);}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;}
+  @media (max-width:640px){
+    .hero{
+      display:block;
+      min-height:0;
+    }
+    .hero-bg{position:relative;inset:auto;height:260px;}
+    .hero-bg img{object-position:center 68%;}
+    .hero-bg::after{
+      background:linear-gradient(180deg, rgba(15,17,20,0) 55%, var(--color-navy-dark) 100%);
+    }
+    .hero-content.container{padding:24px 30px 32px;background:var(--color-navy-dark);}
+    .hero-content .eyebrow{
+      display:block;width:fit-content;
+      margin:-34px auto 20px;
+      font-size:.92rem;
+    }
+    .hero h1{font-size:1.7rem;max-width:16ch;text-shadow:none;}
+    .hero p.lead{font-size:1rem;}
+    .hero-ctas{flex-direction:column;align-items:center;gap:10px;}
+    .hero-ctas .btn{justify-content:center;padding:10px 18px;font-size:.88rem;min-height:40px;width:88%;max-width:320px;}
+  }
+
+  /* Stats band */
+  .stats-band{background:var(--color-navy);color:#fff;padding:0;overflow:hidden;}
+  .stats-marquee{
+    display:flex;align-items:center;width:max-content;
+    animation:stats-scroll 38s linear infinite;
+  }
+  .stat-item{display:flex;align-items:center;gap:14px;padding:30px 40px;white-space:nowrap;}
+  .stat-num{font-family:'Manrope',sans-serif;font-size:1.5rem;font-weight:700;color:#F4C978;}
+  .stat-label{font-size:.9rem;color:rgba(255,255,255,.78);}
+  .stat-icon{width:18px;height:18px;flex-shrink:0;color:#F4C978;}
+  @keyframes stats-scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .stats-marquee{animation:none;}
+  }
+
+  /* Section heading */
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);}
+  .section-head p{color:var(--color-ink-muted);font-size:1.05rem;}
+  #servizi .eyebrow{
+    font-size:1rem;
+    font-weight:800;
+    letter-spacing:.12em;
+    position:relative;
+    padding-bottom:10px;
+  }
+  #servizi .eyebrow::after{
+    content:"";
+    position:absolute;left:0;bottom:0;
+    width:44px;height:3px;
+    background:var(--color-accent);
+    border-radius:2px;
+  }
+  @media (min-width:641px){
+    #servizi .section-head{max-width:none;margin-left:auto;margin-right:auto;text-align:center;}
+    #servizi .eyebrow::after{left:50%;transform:translateX(-50%);}
+    #servizi .section-head p{max-width:560px;margin-left:auto;margin-right:auto;}
+    .servizi-card-body{text-align:center;}
+    .servizi-card-body .icon-badge{margin-left:auto;margin-right:auto;}
+  }
+  @media (max-width:640px){
+    #servizi .servizi-card-body{text-align:center;}
+    #servizi .servizi-card-body .icon-badge{margin-left:auto;margin-right:auto;}
+  }
+
+  /* Servizi cards */
+  .servizi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  @media (max-width:900px){.servizi-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:600px){.servizi-grid{grid-template-columns:1fr;}}
+  .servizi-card{
+    background:var(--color-white);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow-card);
+    border:1px solid var(--color-border);
+    display:flex;flex-direction:column;
+  }
+  .servizi-card .img-wrap{aspect-ratio:4/3;overflow:hidden;background:var(--color-cream-alt);border-bottom:3px solid rgba(138,109,59,.4);}
+  .servizi-card .img-wrap img{width:100%;height:100%;object-fit:cover;}
+  .servizi-card-body{padding:22px 22px 26px;}
+  .servizi-card-body .icon-badge{
+    width:42px;height:42px;border-radius:10px;background:var(--color-cream-alt);
+    display:flex;align-items:center;justify-content:center;color:var(--color-accent);margin-bottom:14px;
+  }
+  .servizi-card-body h3{font-size:1.12rem;margin-bottom:8px;}
+  .servizi-card-body p{color:var(--color-ink-muted);font-size:.94rem;margin-bottom:0;}
+  .servizi-extra{margin-top:28px;display:flex;flex-direction:column;gap:24px;}
+  .servizi-clienti-label{font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:.76rem;font-weight:600;color:var(--color-ink-muted);text-align:center;margin-bottom:14px;}
+  .servizi-clienti{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+  .servizi-clienti .chip{display:flex;align-items:center;gap:8px;background:var(--color-white);border:1px solid var(--color-border);border-radius:999px;padding:9px 18px 9px 14px;font-size:.86rem;font-weight:600;box-shadow:var(--shadow-card);white-space:nowrap;}
+  .servizi-clienti .chip svg{width:17px;height:17px;color:var(--color-accent);flex-shrink:0;}
+  @media (max-width:640px){
+    .servizi-clienti{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+    }
+    .servizi-clienti .chip{
+      justify-content:center;
+      text-align:center;
+      white-space:normal;
+      padding:12px 10px;
+    }
+    .servizi-clienti .chip:last-child{grid-column:1 / -1;}
+  }
+
+  /* Chi siamo */
+  .chi-siamo{background:var(--color-cream-alt);}
+  .cs-grid{display:flex;flex-direction:column;gap:36px;}
+  .cs-text h2{font-size:clamp(1.7rem,3vw,2.3rem);}
+  .cs-text p{color:var(--color-ink-muted);font-size:1.02rem;}
+  .cs-photos{display:flex;gap:16px;align-items:flex-start;}
+  .cs-photos figure{margin:0;flex:1;min-width:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-card);}
+  .cs-photos img{width:100%;height:auto;display:block;}
+  @media (max-width:640px){
+    .cs-photos{
+      overflow-x:auto;-webkit-overflow-scrolling:touch;
+      scroll-snap-type:x mandatory;
+      margin:0 -24px;padding:0 24px 4px;
+      scrollbar-width:none;
+    }
+    .cs-photos::-webkit-scrollbar{display:none;}
+    .cs-photos figure{flex:0 0 82%;scroll-snap-align:start;}
+  }
+  .automazione-strip{
+    margin-top:36px;
+    background:var(--color-white);
+    border:1px solid var(--color-border);
+    border-radius:var(--radius);
+    padding:26px 28px;
+    display:flex;gap:18px;align-items:flex-start;
+    box-shadow:var(--shadow-card);
+  }
+  .automazione-strip .icon-badge{
+    width:46px;height:46px;border-radius:10px;background:var(--color-cream-alt);color:var(--color-accent);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .automazione-strip h3{font-size:1.05rem;margin-bottom:6px;}
+  .automazione-strip p{margin:0;color:var(--color-ink-muted);font-size:.95rem;}
+  @media (max-width:640px){
+    .automazione-strip{flex-direction:column;align-items:center;text-align:center;}
+  }
+
+  /* Section eyebrows — mesma configuração do Servizi */
+  #chi-siamo .eyebrow, #tappeti .eyebrow, #recensioni .eyebrow, #contatti .eyebrow{
+    font-size:1rem;
+    font-weight:800;
+    letter-spacing:.12em;
+    position:relative;
+    padding-bottom:10px;
+  }
+  #chi-siamo .eyebrow::after, #tappeti .eyebrow::after, #contatti .eyebrow::after{
+    content:"";
+    position:absolute;left:0;bottom:0;
+    width:44px;height:3px;
+    background:var(--color-accent);
+    border-radius:2px;
+  }
+  #recensioni .eyebrow::after{
+    content:"";
+    position:absolute;left:0;bottom:0;
+    width:44px;height:3px;
+    background:#F4C978;
+    border-radius:2px;
+  }
+
+  /* Tappeti */
+  .tappeti{position:relative;}
+  .tappeti-hero{
+    margin:0 0 40px;
+    border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-card);
+    position:relative;
+  }
+  .tappeti-hero img{width:100%;height:auto;max-height:460px;object-fit:cover;}
+  .tappeti-hero .cap{
+    position:absolute;bottom:0;left:0;right:0;
+    background:linear-gradient(0deg, rgba(22,25,30,.72), transparent);
+    color:#fff;padding:22px 26px 16px;font-size:.92rem;
+  }
+  .tappeti-body{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start;}
+  @media (max-width:900px){.tappeti-body{grid-template-columns:1fr;}}
+  .tappeti-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px;}
+  .tappeti-list li{display:flex;gap:12px;align-items:flex-start;color:var(--color-ink-muted);font-size:.98rem;}
+  .tappeti-list svg{color:var(--color-accent);flex-shrink:0;margin-top:3px;}
+  .tappeti-gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .tappeti-gallery img{width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow-card);aspect-ratio:1/1;object-fit:cover;}
+  .tappeti-gallery figcaption{font-size:.78rem;color:var(--color-ink-muted);margin-top:6px;text-align:center;}
+  .tappeti-gallery figure{margin:0;}
+
+  /* Prova sociale */
+  .prova-sociale{background:var(--color-navy);color:#fff;}
+  .ps-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  @media (max-width:900px){.ps-grid{grid-template-columns:1fr;}}
+  .ps-badges{display:flex;flex-wrap:wrap;gap:20px;}
+  .ps-badge{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:var(--radius);
+    padding:26px 28px;
+    flex:1;min-width:220px;
+  }
+  .ps-badge .stars{display:flex;gap:3px;color:#F4C978;margin-bottom:10px;}
+  .ps-badge .stars svg{width:18px;height:18px;}
+  .ps-badge .big{font-family:'Manrope',sans-serif;font-size:1.9rem;font-weight:600;display:block;}
+  .ps-badge .small{font-size:.86rem;color:rgba(255,255,255,.72);margin-top:4px;}
+  .ps-text h2{color:#fff;font-size:clamp(1.7rem,3vw,2.3rem);}
+  .ps-text p{color:rgba(255,255,255,.8);}
+  .ps-text a{color:#F4C978;text-decoration:underline;}
+  .ps-source-seal{display:flex;align-items:center;gap:7px;margin-top:12px;margin-bottom:4px;}
+  .ps-source-seal svg{width:18px;height:18px;flex-shrink:0;}
+  .ps-source-seal span{font-size:.76rem;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:rgba(255,255,255,.6);}
+
+  /* Recensioni Google — grid */
+  .reviews-grid{
+    margin-top:48px;
+    display:flex;flex-wrap:wrap;justify-content:center;gap:22px;
+  }
+  .review-card{flex:0 1 calc(33.333% - 14.667px);min-width:260px;}
+  @media (max-width:900px){.review-card{flex-basis:calc(50% - 11px);}}
+  @media (max-width:640px){
+    .reviews-grid{
+      display:flex;
+      flex-wrap:nowrap;
+      justify-content:flex-start;
+      overflow-x:auto;-webkit-overflow-scrolling:touch;
+      scroll-snap-type:x mandatory;
+      scroll-marker-group:none;
+      gap:14px;
+      margin:48px -24px 0;
+      padding:0 24px 4px;
+      scrollbar-width:none;
+    }
+    .reviews-grid::-webkit-scrollbar{display:none;}
+    .reviews-grid::scroll-button(*){display:none;}
+    .review-card{flex:0 0 86%;scroll-snap-align:start;}
+  }
+  .reviews-dots{display:none;}
+  @media (max-width:640px){
+    .reviews-dots{display:flex;justify-content:center;gap:8px;margin-top:16px;}
+    .reviews-dots span{
+      width:7px;height:7px;border-radius:50%;
+      background:rgba(255,255,255,.3);
+      transition:background .2s ease;
+    }
+    .reviews-dots span.active{background:#F4C978;}
+  }
+  .review-card{
+    background:var(--color-white);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow-card);
+    padding:22px 22px 24px;
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .review-head{display:flex;align-items:flex-start;gap:12px;}
+  .review-avatar{
+    width:40px;height:40px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;
+    color:#fff;font-family:'Manrope',sans-serif;font-weight:700;font-size:1rem;
+  }
+  .review-name{font-size:.95rem;font-weight:700;color:var(--color-ink);}
+  .local-guide{
+    display:inline-block;margin-left:6px;
+    font-size:.68rem;font-weight:600;color:var(--color-ink-muted);
+    background:var(--color-cream-alt);border-radius:4px;padding:2px 6px;
+    vertical-align:middle;white-space:nowrap;
+  }
+  .review-time{font-size:.8rem;color:#9AA0A6;margin-top:2px;}
+  .review-stars{display:flex;gap:2px;color:#FBBC04;}
+  .review-stars svg{width:16px;height:16px;}
+  .review-text{font-size:.92rem;color:var(--color-ink-muted);margin:0;line-height:1.5;}
+
+  /* Contatti */
+  .contatti{background:var(--color-cream-alt);}
+  .cont-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch;}
+  @media (max-width:900px){.cont-grid{grid-template-columns:1fr;}}
+  .cont-card{background:var(--color-white);border-radius:var(--radius);box-shadow:var(--shadow-card);border:1px solid var(--color-border);padding:38px;}
+  .cont-row{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px;}
+  .cont-row:last-child{margin-bottom:0;}
+  .cont-row .icon-badge{width:42px;height:42px;border-radius:10px;background:var(--color-cream-alt);color:var(--color-accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .cont-row a{text-decoration:none;font-weight:600;}
+  .cont-row a:hover{text-decoration:underline;}
+  .cont-row .label{font-size:.82rem;color:var(--color-ink-muted);margin-bottom:2px;}
+  .map-embed{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-card);border:1px solid var(--color-border);min-height:340px;}
+  .map-embed iframe{width:100%;height:100%;min-height:340px;border:0;display:block;}
+  .cont-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px;}
+
+  /* Footer */
+  footer{background:var(--color-navy-dark);color:rgba(255,255,255,.72);padding:52px 0 28px;font-size:.9rem;}
+  .footer-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px;margin-bottom:32px;}
+  .footer-brand{display:flex;align-items:center;gap:12px;color:#fff;font-family:'Manrope',sans-serif;font-size:1.15rem;font-weight:600;}
+  .footer-brand img{height:38px;width:auto;border-radius:6px;}
+  .footer-col a{color:rgba(255,255,255,.72);text-decoration:none;display:block;margin-bottom:8px;}
+  .footer-col a:hover{color:#fff;}
+  .footer-col h4{color:#fff;font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:14px;}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.14);padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.8rem;color:rgba(255,255,255,.5);}
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{transition-duration:.001ms !important;animation-duration:.001ms !important;}
+  }
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Vai al contenuto principale</a>
+
+<div class="demo-banner">
+  <strong>Anteprima dimostrativa</strong> creata da Coeso Digital, non ancora pubblicata. Non è il sito ufficiale di Lavanderie Tortonesi.
+</div>
+
+<header>
+  <div class="nav-wrap">
+    <a href="#main-content" class="brand">
+      <img src="assets/logo.png" alt="Lavanderie Tortonesi" width="255" height="254">
+      <span>Lavanderie Tortonesi</span>
+    </a>
+    <div class="nav-overlay" id="navOverlay"></div>
+    <nav class="primary-nav" id="primaryNav" aria-label="Navigazione principale">
+      <a href="#chi-siamo">Chi Siamo</a>
+      <a href="#servizi">Servizi</a>
+      <a href="#tappeti">Tappeti</a>
+      <a href="#recensioni">Recensioni</a>
+      <a href="#contatti">Contatti</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+390131863427" class="btn btn-outline">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106a1.125 1.125 0 00-1.173.417l-.97 1.293a1.125 1.125 0 01-1.21.38 12.035 12.035 0 01-7.143-7.143 1.125 1.125 0 01.38-1.21l1.293-.97a1.125 1.125 0 00.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        0131 863427
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="primaryNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+
+  <!-- HERO -->
+  <section class="hero" style="padding:0;">
+    <div class="hero-bg">
+      <img src="assets/IA-fachada-render-ilustrativo-2.png" alt="" role="presentation" width="1448" height="1086" fetchpriority="high">
+    </div>
+    <div class="container hero-content">
+      <span class="eyebrow">Dal 1960 · Tortona (AL)</span>
+      <h1>Lavanderia industriale e restauro tappeti, tramandati da tre generazioni</h1>
+      <p class="lead">Lavaggio industriale, stiratura, confezionamento e restauro artigianale di tappeti orientali. Al servizio di privati, industrie, comuni ed enti pubblici da oltre 60 anni.</p>
+      <div class="hero-ctas">
+        <a href="https://wa.me/390131863427" target="_blank" rel="noopener" class="btn btn-whatsapp">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.1c-.24.68-1.4 1.33-1.93 1.4-.49.07-1.11.1-1.79-.11a16.3 16.3 0 01-1.62-.6c-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.08.99-2.37.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.29.29-.12.57.16.28.73 1.2 1.57 1.95 1.08.96 1.98 1.26 2.27 1.4.28.14.45.12.62-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.62-.14.26.1 1.63.77 1.9.91.28.14.46.21.53.33.07.12.07.68-.17 1.35z"/></svg>
+          WhatsApp
+        </a>
+        <a href="mailto:tortonesi@lavanderietortonesi.it" class="btn btn-outline-light">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+          Richiedi un preventivo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAND -->
+  <section class="stats-band" aria-hidden="true">
+    <div class="stats-marquee">
+      <div class="stat-item">
+        <span class="stat-num">Dal 1960</span>
+        <span class="stat-label">Oltre 60 anni di attività a Tortona</span>
+      </div>
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+      <div class="stat-item">
+        <span class="stat-num">3ª generazione</span>
+        <span class="stat-label">Guidata dalla stessa famiglia</span>
+      </div>
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="2.6"/><circle cx="16" cy="10.5" r="2.1"/><path d="M4 19c.4-3 2.3-5 4.5-5s4.1 2 4.5 5"/><path d="M13.5 19c.3-2.2 1.6-3.8 3-4.1"/></svg>
+      <div class="stat-item">
+        <span class="stat-num">Dal 1960</span>
+        <span class="stat-label">Oltre 60 anni di attività a Tortona</span>
+      </div>
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+      <div class="stat-item">
+        <span class="stat-num">3ª generazione</span>
+        <span class="stat-label">Guidata dalla stessa famiglia</span>
+      </div>
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="2.6"/><circle cx="16" cy="10.5" r="2.1"/><path d="M4 19c.4-3 2.3-5 4.5-5s4.1 2 4.5 5"/><path d="M13.5 19c.3-2.2 1.6-3.8 3-4.1"/></svg>
+      <div class="stat-item">
+        <span class="stat-num">Dal 1960</span>
+        <span class="stat-label">Oltre 60 anni di attività a Tortona</span>
+      </div>
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+      <div class="stat-item">
+        <span class="stat-num">3ª generazione</span>
+        <span class="stat-label">Guidata dalla stessa famiglia</span>
+      </div>
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="2.6"/><circle cx="16" cy="10.5" r="2.1"/><path d="M4 19c.4-3 2.3-5 4.5-5s4.1 2 4.5 5"/><path d="M13.5 19c.3-2.2 1.6-3.8 3-4.1"/></svg>
+      <div class="stat-item">
+        <span class="stat-num">Dal 1960</span>
+        <span class="stat-label">Oltre 60 anni di attività a Tortona</span>
+      </div>
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+      <div class="stat-item">
+        <span class="stat-num">3ª generazione</span>
+        <span class="stat-label">Guidata dalla stessa famiglia</span>
+      </div>
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="2.6"/><circle cx="16" cy="10.5" r="2.1"/><path d="M4 19c.4-3 2.3-5 4.5-5s4.1 2 4.5 5"/><path d="M13.5 19c.3-2.2 1.6-3.8 3-4.1"/></svg>
+      <div class="stat-item">
+        <span class="stat-num">Dal 1960</span>
+        <span class="stat-label">Oltre 60 anni di attività a Tortona</span>
+      </div>
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+      <div class="stat-item">
+        <span class="stat-num">3ª generazione</span>
+        <span class="stat-label">Guidata dalla stessa famiglia</span>
+      </div>
+      <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8.5" cy="8.5" r="2.6"/><circle cx="16" cy="10.5" r="2.1"/><path d="M4 19c.4-3 2.3-5 4.5-5s4.1 2 4.5 5"/><path d="M13.5 19c.3-2.2 1.6-3.8 3-4.1"/></svg>
+    </div>
+  </section>
+
+  <!-- SERVIZI -->
+  <section id="servizi">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Servizi</span>
+        <h2>Lavorazione in completa automazione</h2>
+        <p>Ogni capo viene identificato con un codice a barre dedicato e monitorato in ogni fase del processo, dal ritiro alla consegna.</p>
+      </div>
+      <div class="servizi-grid">
+        <div class="servizi-card">
+          <div class="img-wrap"><img src="assets/maquinas-lavagem-industrial.png" alt="Macchinari di lavaggio industriale" width="900" height="900" loading="lazy"></div>
+          <div class="servizi-card-body">
+            <div class="icon-badge">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.75" y="3" width="16.5" height="18" rx="2"/><circle cx="12" cy="13" r="5.25"/><path d="M12 13c1.5-1.5 3-1.5 3.5 0s-1 3-3.5 1.5"/><circle cx="7" cy="6" r=".6" fill="currentColor" stroke="none"/><circle cx="9.5" cy="6" r=".6" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <h3>Lavaggio industriale su misura</h3>
+            <p>Biancheria piana, piumoni e capi tecnici trattati con cicli a secco o ad acqua calibrati capo per capo, anche per grandi quantitativi.</p>
+          </div>
+        </div>
+        <div class="servizi-card">
+          <div class="img-wrap"><img src="assets/maquina-dobradeira-passadeira.png" alt="Macchina per stiratura e piegatura" width="900" height="900" loading="lazy"></div>
+          <div class="servizi-card-body">
+            <div class="icon-badge">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 18.5c0-3.5 1-8.5 6.2-8.5H16a3 3 0 013 3v1.2a4.3 4.3 0 01-4.3 4.3H5z"/><path d="M8.5 10c.3-1.8 1.7-3 3.5-3h1.5"/><circle cx="9.5" cy="15.2" r=".5" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <h3>Stiratura, piegatura e ricondizionamento</h3>
+            <p>Spazzolatura, stiratura e piegatura automatizzata, più cicli di ricondizionamento ad aria calda per i capi che richiedono finissaggi di qualità.</p>
+          </div>
+        </div>
+        <div class="servizi-card">
+          <div class="img-wrap"><img src="assets/cabide-camisas-passadas.png" alt="Capi puliti e stirati pronti per la consegna" width="900" height="900" loading="lazy"></div>
+          <div class="servizi-card-body">
+            <div class="icon-badge">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.75 8.25L12 3.75l8.25 4.5v7.5L12 20.25l-8.25-4.5v-7.5z"/><path d="M3.75 8.25L12 12.75l8.25-4.5"/><path d="M12 12.75v7.5"/></svg>
+            </div>
+            <h3>Ritiro, consegna e garanzia</h3>
+            <p>Ritiriamo la merce a domicilio e la riconsegniamo lavata e stirata, con la garanzia di qualità di chi lavora in questo settore da tre generazioni.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="servizi-extra">
+        <div class="automazione-strip">
+          <div class="icon-badge">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><rect x="6.5" y="7.5" width="11" height="9" rx=".5"/><path d="M3 4l3.5 3.5M21 4l-3.5 3.5M3 20l3.5-3.5M21 20l-3.5-3.5"/></svg>
+          </div>
+          <div>
+            <h3>Tappeti e restauro tessile</h3>
+            <p>Lavaggio manuale e restauro artigianale di tappeti orientali pregiati, con tessuti e tinture originali. <a href="#tappeti">Scopri il servizio dedicato ↓</a></p>
+          </div>
+        </div>
+
+        <div>
+          <p class="servizi-clienti-label">Al servizio di</p>
+          <div class="servizi-clienti">
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 2v6a2 2 0 002 2v12M7 2v6M9 2v6M11 2v6a2 2 0 01-2 2"/><path d="M17 2c-1.7 0-3 1.8-3 4.5S15.3 11 17 11v11"/></svg>
+              Ristoranti
+            </span>
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 18v-7a2 2 0 012-2h5a2 2 0 012 2v2"/><path d="M12 13h7a2 2 0 012 2v3"/><path d="M3 21v-3h18v3"/><circle cx="6.5" cy="10.5" r="1.25"/></svg>
+              Alberghi
+            </span>
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.35-9.5-8.5C.7 8 2.4 4.5 5.8 4.2 8 4 10 5 12 7.3 14 5 16 4 18.2 4.2 21.6 4.5 23.3 8 21.5 11.5 19 15.65 12 20 12 20z"/></svg>
+              Strutture sanitarie
+            </span>
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8.5" r="2.8"/><circle cx="17" cy="9.5" r="2.2"/><path d="M2.5 19c.4-3 2.5-5.2 5.5-5.2s5.1 2.2 5.5 5.2"/><path d="M14.5 19c.3-2.3 1.8-3.9 3.3-4.2"/></svg>
+              Comunità
+            </span>
+            <span class="chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.75 11.25L12 4l8.25 7.25M5.5 9.75V19.5a1 1 0 001 1H9.5v-5.25a1 1 0 011-1h3a1 1 0 011 1V20.5h3a1 1 0 001-1V9.75"/></svg>
+              Privati e famiglie
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHI SIAMO -->
+  <section id="chi-siamo" class="chi-siamo">
+    <div class="container">
+      <div class="cs-grid">
+        <div class="cs-text">
+          <span class="eyebrow">Chi siamo</span>
+          <h2>Una storia di famiglia, dai primi anni ’60 a oggi</h2>
+          <p>Lavanderie Tortonesi nasce nei primi anni '60 a Tortona. Oggi l'azienda è guidata da Fabio Tortonesi, terza generazione della stessa famiglia, al servizio di privati, industrie, comuni ed enti pubblici in tutto il territorio, con collaborazioni che raggiungono importanti realtà di tutto il nord Italia.</p>
+          <p>La struttura è più grande di quanto la presenza online lasci intuire: un capannone di 1.000 m² attrezzato per grandi volumi, lavorazioni interamente automatizzate e un team di personale qualificato, con anni di esperienza nella cura dei tessuti.</p>
+
+          <div class="automazione-strip">
+            <div class="icon-badge">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" aria-hidden="true"><path stroke-width="1.6" d="M3 4v16"/><path stroke-width="2.6" d="M6 4v16"/><path stroke-width="1.6" d="M8.5 4v16"/><path stroke-width="1.6" d="M11 4v16"/><path stroke-width="2.6" d="M13.5 4v16"/><path stroke-width="1.6" d="M16 4v16"/><path stroke-width="2.6" d="M18.5 4v16"/><path stroke-width="1.6" d="M21 4v16"/></svg>
+            </div>
+            <div>
+              <h3>Tracciamento con codice a barre</h3>
+              <p>Ogni capo che entra in lavanderia riceve un codice a barre dedicato e viene monitorato in ogni fase del processo, dal ritiro alla consegna.</p>
+            </div>
+          </div>
+        </div>
+        <div class="cs-photos">
+          <figure>
+            <img src="assets/chi%20siamo1.png" alt="Capannone Lavanderie Tortonesi, la sede reale a Tortona" width="1000" height="750" loading="lazy">
+          </figure>
+          <figure>
+            <img src="assets/chi%20siamo2.png" alt="Banco di accoglienza clienti" width="1000" height="750" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAPPETI -->
+  <section id="tappeti" class="tappeti">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Tappeti</span>
+        <h2>Lavaggio e restauro artigianale di tappeti orientali</h2>
+        <p>Un servizio specialistico che va oltre il semplice lavaggio: cura, materiali e tinture pensati per preservare il valore di ogni tappeto.</p>
+      </div>
+
+      <figure class="tappeti-hero">
+        <img src="assets/tapete-oriental-lavagem-industrial.png" alt="Grande tappeto orientale durante il lavaggio industriale" width="800" height="600" loading="lazy">
+        <figcaption class="cap">Impianto di lavaggio dedicato ai tappeti, con trattamento antitarmico e antiallergico</figcaption>
+      </figure>
+
+      <div class="tappeti-body">
+        <ul class="tappeti-list">
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            <span>Impianto depolveratore e lavaggio con trattamento antitarmico e antiallergico.</span>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            <span>Essiccatoio per un’asciugatura programmata, rispettosa delle fibre.</span>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            <span>Spazzolatura e confezionamento a cura di personale qualificato.</span>
+          </li>
+          <li>
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>
+            <span>Restauro artigianale dei tappeti orientali più preziosi, con tessuti e tinture originali.</span>
+          </li>
+        </ul>
+        <div class="tappeti-gallery">
+          <figure>
+            <img src="assets/detalhe-restauro-tapete-1.png" alt="Dettaglio di un tappeto orientale in fase di restauro" width="427" height="640" loading="lazy">
+            <figcaption>Dettaglio di restauro artigianale</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/detalhe-restauro-tapete-2.png" alt="Dettaglio di motivo decorativo di un tappeto restaurato" width="427" height="640" loading="lazy">
+            <figcaption>Tessuti e tinture originali</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA SOCIALE -->
+  <section id="recensioni" class="prova-sociale">
+    <div class="container">
+      <div class="ps-grid">
+        <div class="ps-text">
+          <span class="eyebrow" style="color:#F4C978;">Fiducia costruita in oltre 60 anni</span>
+          <h2>La valutazione dei nostri clienti</h2>
+          <div class="ps-source-seal">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"/><path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"/><path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"/><path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"/></svg>
+            <span>Recensioni verificate su Google</span>
+          </div>
+          <p>Qualità e serietà sono i valori che guidano il lavoro di Fabio Tortonesi. Per i tappeti più preziosi usiamo la Macleca Total, una macchina unica al mondo e costruita interamente in acciaio inox, che gestisce da sola il ciclo di lavaggio, risciacquo e centrifuga a 1500 giri al minuto.</p>
+          <p>Non ci limitiamo a dirlo: la nostra reputazione è pubblica e verificabile su Google e PagineGialle.</p>
+          <p><a href="https://www.google.com/maps/search/?api=1&query=Lavanderie+Tortonesi+Via+G.+Pernigotti+5+Tortona" target="_blank" rel="noopener">Vedi le recensioni su Google Maps →</a></p>
+        </div>
+        <div class="ps-badges">
+          <div class="ps-badge">
+            <div class="stars" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            </div>
+            <span class="small">45 recensioni su Google</span>
+          </div>
+          <div class="ps-badge">
+            <div class="stars" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            </div>
+            <span class="small">Valutazione eccellente su PagineGialle</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar" style="background:#5B8DEF;">G</div>
+            <div class="review-info">
+              <div class="review-name">Giovanni Coppola</div>
+              <div class="review-time">5 anni fa</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+          </div>
+          <p class="review-text">"Mi avvalgo da un po' di tempo dei loro servizi, e posso confermare con estremo piacere di essere soddisfatto, visto che il mio outfit giornaliero è composto dall'abito e dalla camicia, sempre perfetta, stirata come lo deve essere. Complimenti alla loro professionalità, disponibilità e gentilezza di tutto il personale e alla puntualità nel consegnare i capi. Consigliatissimo."</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar" style="background:#E2725B;">S</div>
+            <div class="review-info">
+              <div class="review-name">Stefano <span class="local-guide">Local Guide</span></div>
+              <div class="review-time">1 anno fa</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+          </div>
+          <p class="review-text">"Super organizzati! Locali pulitissimi e personale molto gentile. Mai visto una Lavanderia così. Complimenti"</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar" style="background:#4CAF7D;">D</div>
+            <div class="review-info">
+              <div class="review-name">Daniela Perillo <span class="local-guide">Local Guide</span></div>
+              <div class="review-time">6 anni fa</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+          </div>
+          <p class="review-text">"Consigliatissima, sono riusciti ad aiutarmi a rimettere a posto il mio divano sfoderabile rovinato da macchie dovute a maldestri lavori di ritinteggiatura, senza di loro non so come avrei potuto risolvere e comunque in linea generale eccellono in professionalità, disponibilità, puntualità e qualità!!!"</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar" style="background:#B37FEB;">T</div>
+            <div class="review-info">
+              <div class="review-name">Tiziana Campo <span class="local-guide">Local Guide</span></div>
+              <div class="review-time">4 anni fa</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+          </div>
+          <p class="review-text">"Prezzi giusti, professionalità e cortesia al top. Consigliatissimo"</p>
+        </div>
+
+        <div class="review-card">
+          <div class="review-head">
+            <div class="review-avatar" style="background:#D9A441;">A</div>
+            <div class="review-info">
+              <div class="review-name">Alexander Munteanu <span class="local-guide">Local Guide</span></div>
+              <div class="review-time">7 anni fa</div>
+            </div>
+          </div>
+          <div class="review-stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.562.562 0 00-.586 0l-4.725 2.885a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.562.562 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+          </div>
+          <p class="review-text">"Lavano molto bene la roba e i prezzi sono buonissimi, sono proprio contento."</p>
+        </div>
+      </div>
+
+      <div class="reviews-dots" aria-hidden="true">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contatti" class="contatti">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Contatti</span>
+        <h2>Richiedi un preventivo</h2>
+        <p>Scrivi o chiama direttamente, rispondiamo il prima possibile.</p>
+      </div>
+      <div class="cont-grid">
+        <div class="cont-card">
+          <div class="cont-row">
+            <div class="icon-badge">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+            </div>
+            <div>
+              <div class="label">Indirizzo</div>
+              <a href="https://www.google.com/maps/search/?api=1&query=Via+G.+Pernigotti+5%2FC+Tortona" target="_blank" rel="noopener">Via G. Pernigotti 5/C, 15057 Tortona (AL)</a>
+            </div>
+          </div>
+          <div class="cont-row">
+            <div class="icon-badge">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106a1.125 1.125 0 00-1.173.417l-.97 1.293a1.125 1.125 0 01-1.21.38 12.035 12.035 0 01-7.143-7.143 1.125 1.125 0 01.38-1.21l1.293-.97a1.125 1.125 0 00.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+            </div>
+            <div>
+              <div class="label">Telefono</div>
+              <a href="tel:+390131863427">0131 863427</a>
+            </div>
+          </div>
+          <div class="cont-row">
+            <div class="icon-badge">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+            </div>
+            <div>
+              <div class="label">Email</div>
+              <a href="mailto:tortonesi@lavanderietortonesi.it">tortonesi@lavanderietortonesi.it</a>
+            </div>
+          </div>
+          <div class="cont-ctas">
+            <a href="tel:+390131863427" class="btn btn-primary">Chiama ora</a>
+            <a href="mailto:tortonesi@lavanderietortonesi.it" class="btn btn-outline">Scrivi una email</a>
+          </div>
+        </div>
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps?q=Via+G.+Pernigotti+5/C,+15057+Tortona+AL&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mappa: Via G. Pernigotti 5/C, Tortona (AL)">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="" width="255" height="254" loading="lazy">
+          <span>Lavanderie Tortonesi</span>
+        </div>
+        <p style="max-width:32ch;margin-top:14px;color:rgba(255,255,255,.6);font-size:.88rem;">Lavanderia industriale e restauro tappeti a Tortona (AL). Dal 1960, tre generazioni della stessa famiglia.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Naviga</h4>
+        <a href="#chi-siamo">Chi Siamo</a>
+        <a href="#servizi">Servizi</a>
+        <a href="#tappeti">Tappeti</a>
+        <a href="#recensioni">Recensioni</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contatti</h4>
+        <a href="tel:+390131863427">0131 863427</a>
+        <a href="mailto:tortonesi@lavanderietortonesi.it">tortonesi@lavanderietortonesi.it</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Via+G.+Pernigotti+5%2FC+Tortona" target="_blank" rel="noopener">Via G. Pernigotti 5/C, Tortona (AL)</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Lavanderie Tortonesi · P.IVA 01761120060</span>
+      <span>Anteprima dimostrativa sviluppata da Coeso Digital</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const primaryNav = document.getElementById('primaryNav');
+  const navOverlay = document.getElementById('navOverlay');
+
+  function closeMenu(){
+    primaryNav.classList.remove('open');
+    navOverlay.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded','false');
+  }
+  function toggleMenu(){
+    const isOpen = primaryNav.classList.toggle('open');
+    navOverlay.classList.toggle('open', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+  }
+  menuToggle.addEventListener('click', toggleMenu);
+  navOverlay.addEventListener('click', closeMenu);
+  primaryNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeMenu(); });
+
+  const reviewsGrid = document.querySelector('.reviews-grid');
+  const reviewDots = document.querySelectorAll('.reviews-dots span');
+  if(reviewsGrid && reviewDots.length){
+    const cards = Array.from(reviewsGrid.querySelectorAll('.review-card'));
+    let ticking = false;
+    function updateActiveDot(){
+      const gridLeft = reviewsGrid.getBoundingClientRect().left;
+      let closestIndex = 0;
+      let closestDistance = Infinity;
+      cards.forEach((card, i) => {
+        const distance = Math.abs(card.getBoundingClientRect().left - gridLeft);
+        if(distance < closestDistance){
+          closestDistance = distance;
+          closestIndex = i;
+        }
+      });
+      reviewDots.forEach((dot, i) => dot.classList.toggle('active', i === closestIndex));
+      ticking = false;
+    }
+    reviewsGrid.addEventListener('scroll', () => {
+      if(!ticking){
+        requestAnimationFrame(updateActiveDot);
+        ticking = true;
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
