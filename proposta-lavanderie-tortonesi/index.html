@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Lavanderie Tortonesi — Proposta Coeso Digital</title>
+<meta name="description" content="Analisi della presenza online di Lavanderie Tortonesi e proposta di Coeso Digital.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#080808;
+    --black-alt:#0D0D0D;
+    --black-alt2:#14130F;
+    --gray-mid:#242424;
+    --cream:#ECE9E3;
+    --cream-alt:#D4D0C6;
+    --orange:#FF4D00;
+    --ink-soft:#9A9A9A;
+    --ink-strong:#D8D8D8;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--black);
+    color:var(--ink-strong);
+    font-family:'Martian Mono', monospace;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  a{color:inherit;}
+
+  /* Header */
+  header{
+    padding:26px 0;
+  }
+  .brand{
+    font-size:.72rem;
+    letter-spacing:.14em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+  }
+
+  /* Eyebrow / section labels */
+  .eyebrow{
+    display:inline-block;
+    font-weight:300;
+    font-size:clamp(1rem, 2vw, 1.35rem);
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:0 0 28px;
+  }
+  section.dark .eyebrow{color:var(--ink-soft);}
+  section.light .eyebrow{color:#5b584f;}
+
+  /* Hero */
+  .hero{
+    padding:64px 0 100px;
+  }
+  .hero h1{
+    font-weight:300;
+    font-size:clamp(2.6rem, 10vw, 7.5rem);
+    line-height:.98;
+    letter-spacing:-.01em;
+    margin:0 0 32px;
+    text-transform:uppercase;
+  }
+  .hero p{
+    max-width:640px;
+    font-size:clamp(1rem, 1.6vw, 1.15rem);
+    color:var(--ink-strong);
+    margin:0;
+  }
+  .hero-ring{
+    width:120px;height:120px;
+    border:1px solid #333;
+    border-radius:50%;
+    margin-top:56px;
+  }
+
+  /* Section base */
+  section{padding:96px 0;}
+  section.light{background:var(--cream);color:#1a1912;}
+  section.mid{background:var(--black-alt2);}
+
+  hr.rule{
+    border:0;border-top:1px solid #242424;
+    margin:0;
+  }
+  section.light + section hr.rule,
+  section.light hr.rule{border-top-color:#cfcabc;}
+
+  /* Findings (numbered list) */
+  .findings-list{
+    list-style:none;margin:0;padding:0;
+    display:flex;flex-direction:column;
+  }
+  .findings-list li{
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:24px;
+    padding:26px 0;
+    border-top:1px solid #cfcabc;
+    align-items:start;
+  }
+  .findings-list li:last-child{border-bottom:1px solid #cfcabc;}
+  .findings-list .num{
+    font-weight:500;
+    color:var(--orange);
+    font-size:1.05rem;
+  }
+  .findings-list p{
+    margin:0;
+    font-size:clamp(1rem, 1.4vw, 1.15rem);
+    max-width:640px;
+  }
+
+  /* Proposal links */
+  .links-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:#242424;
+    border:1px solid #242424;
+  }
+  @media (max-width:720px){.links-grid{grid-template-columns:1fr;}}
+  .link-card{
+    background:var(--black);
+    padding:40px 32px;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    transition:background .2s ease;
+  }
+  .link-card:hover{background:var(--black-alt2);}
+  .link-card .tag{
+    font-size:.72rem;
+    letter-spacing:.12em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+  }
+  .link-card h3{
+    margin:0;
+    font-weight:400;
+    font-size:1.3rem;
+    color:var(--ink-strong);
+  }
+  .link-card .go{
+    margin-top:auto;
+    font-size:.85rem;
+    color:var(--orange);
+  }
+
+  /* Why now */
+  .why-list{
+    display:flex;
+    flex-direction:column;
+  }
+  .why-item{
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:24px;
+    padding:36px 0;
+    border-top:1px solid #242424;
+  }
+  .why-item:last-child{border-bottom:1px solid #242424;}
+  .why-item .num{
+    font-weight:500;
+    color:var(--orange);
+    font-size:1.05rem;
+  }
+  .why-item h3{
+    margin:0 0 10px;
+    font-weight:400;
+    font-size:clamp(1.05rem, 1.8vw, 1.35rem);
+    color:var(--ink-strong);
+  }
+  .why-item p{
+    margin:0;
+    max-width:620px;
+    color:var(--ink-soft);
+    font-size:clamp(.95rem, 1.3vw, 1.05rem);
+  }
+
+  /* CTA */
+  .cta{
+    text-align:center;
+  }
+  .cta h2{
+    font-weight:300;
+    font-size:clamp(1.8rem, 5vw, 3.2rem);
+    text-transform:uppercase;
+    margin:0 0 20px;
+    line-height:1.1;
+  }
+  .cta p{
+    color:var(--ink-soft);
+    font-size:1rem;
+    max-width:480px;
+    margin:0 auto 40px;
+  }
+  .wa-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    background:var(--orange);
+    color:#0a0500;
+    text-decoration:none;
+    font-family:'Martian Mono', monospace;
+    font-weight:600;
+    font-size:.95rem;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    padding:18px 32px;
+    border-radius:2px;
+  }
+  .wa-btn:hover{background:#ff6420;}
+  .wa-btn svg{width:18px;height:18px;flex-shrink:0;}
+
+  footer{
+    padding:36px 0 48px;
+    text-align:center;
+  }
+  footer p{
+    margin:0;
+    font-size:.7rem;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:#4a4a4a;
+  }
+</style>
+</head>
+<body>
+
+  <header class="wrap">
+    <div class="brand">Coeso Digital</div>
+  </header>
+
+  <section class="hero wrap dark">
+    <span class="eyebrow">[Proposta · Coeso Digital]</span>
+    <h1>Lavanderie<br>Tortonesi</h1>
+    <p>Un'analisi della presenza online dell'azienda e una proposta concreta per farla corrispondere a quello che è davvero.</p>
+    <div class="hero-ring" aria-hidden="true"></div>
+  </section>
+
+  <hr class="rule">
+
+  <section class="light">
+    <div class="wrap">
+      <span class="eyebrow">[Quello che abbiamo trovato]</span>
+      <ul class="findings-list">
+        <li>
+          <span class="num">01</span>
+          <p>4,6 su Google, con 45 recensioni reali. Oggi non compaiono da nessuna parte sul sito attuale.</p>
+        </li>
+        <li>
+          <span class="num">02</span>
+          <p>Il capannone e la struttura fisica dell'azienda sono più grandi di quanto il sito attuale lasci intuire.</p>
+        </li>
+        <li>
+          <span class="num">03</span>
+          <p>Due dei tre concorrenti diretti della zona sono messi peggio online in questo momento: uno con il sito fuori uso, l'altro senza sito.</p>
+        </li>
+        <li>
+          <span class="num">04</span>
+          <p>Il link "Offerte" nel menu del sito attuale è rotto.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <span class="eyebrow">[La proposta]</span>
+      <div class="links-grid">
+        <a class="link-card" href="https://matecoelho.github.io/demo-lavanderie-tortonesi/" target="_blank" rel="noopener">
+          <span class="tag">Demo</span>
+          <h3>Come potrebbe essere il nuovo sito</h3>
+          <span class="go">Apri la demo ↗</span>
+        </a>
+        <a class="link-card" href="https://matecoelho.github.io/before-after/lavanderie-tortonesi/" target="_blank" rel="noopener">
+          <span class="tag">Prima / Dopo</span>
+          <h3>Confronto diretto con il sito attuale</h3>
+          <span class="go">Apri il confronto ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mid">
+    <div class="wrap">
+      <span class="eyebrow">[Perché ora]</span>
+      <div class="why-list">
+        <div class="why-item">
+          <span class="num">01</span>
+          <div>
+            <h3>Prova sociale reale, invisibile</h3>
+            <p>La Lavanderie Tortonesi ha una reputazione solida: 4,6 stelle, 45 recensioni vere. Ma chi cerca l'azienda online oggi non trova questa prova da nessuna parte. È fiducia già conquistata che nessuno riesce a vedere.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="num">02</span>
+          <div>
+            <h3>Il divario tra struttura reale e comunicazione</h3>
+            <p>Capannone, attrezzatura, scala dell'operazione: tutto più grande di quanto il sito attuale lasci intuire. Chi visita il sito oggi si fa un'idea più piccola dell'azienda di quella reale.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="num">03</span>
+          <div>
+            <h3>Una finestra che non resta aperta</h3>
+            <p>Due dei tre concorrenti diretti della zona sono messi peggio online in questo momento. Non è una condizione permanente. Muoversi ora significa arrivare prima che la situazione cambi.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="num">04</span>
+          <div>
+            <h3>L'attenzione al dettaglio conta</h3>
+            <p>Anche un link rotto nel menu del sito attuale, quello di "Offerte", è stato mappato. È il tipo di cura che di solito nessuno nota finché qualcuno non lo fa notare.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark cta">
+    <div class="wrap">
+      <h2>Parliamone</h2>
+      <p>Nessun modulo da compilare. Scrivi direttamente su WhatsApp.</p>
+      <a class="wa-btn" href="https://wa.me/393479780606?text=Ciao%2C%20ho%20visto%20la%20proposta%20di%20Coeso%20Digital%20per%20Lavanderie%20Tortonesi." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.1c-.24.68-1.4 1.33-1.93 1.4-.49.07-1.11.1-1.79-.11a16.3 16.3 0 01-1.62-.6c-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.08.99-2.37.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.29.29-.12.57.16.28.73 1.2 1.57 1.95 1.08.96 1.98 1.26 2.27 1.4.28.14.45.12.62-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.62-.14.26.1 1.63.77 1.9.91.28.14.46.21.53.33.07.12.07.68-.17 1.35z"/></svg>
+        Scrivi su WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Coeso Digital — Materiale riservato, non indicizzato</p>
+  </footer>
+
+</body>
+</html>
