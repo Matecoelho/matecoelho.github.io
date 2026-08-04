@@ -100,30 +100,78 @@
   section.light + section hr.rule,
   section.light hr.rule{border-top-color:#cfcabc;}
 
-  /* Findings (numbered list) */
-  .findings-list{
-    list-style:none;margin:0;padding:0;
-    display:flex;flex-direction:column;
-  }
-  .findings-list li{
+  /* Numbered tech-cards (achados / perché ora) */
+  .card-grid{
     display:grid;
-    grid-template-columns:64px 1fr;
-    gap:24px;
-    padding:26px 0;
-    border-top:1px solid #cfcabc;
-    align-items:start;
+    grid-template-columns:1fr 1fr;
+    gap:44px 48px;
   }
-  .findings-list li:last-child{border-bottom:1px solid #cfcabc;}
-  .findings-list .num{
-    font-weight:500;
-    color:var(--orange);
-    font-size:1.05rem;
+  @media (max-width:720px){.card-grid{grid-template-columns:1fr;gap:52px;}}
+
+  .tcard{
+    position:relative;
+    border:1px dashed #b6b0a0;
+    padding:30px 26px 26px;
   }
-  .findings-list p{
+  section.dark .tcard, section.mid .tcard{border-color:#3a3a3a;}
+
+  .tcard .corner{
+    position:absolute;
+    font-size:.78rem;
+    line-height:1;
+    color:#9c9686;
+    font-weight:400;
+    user-select:none;
+  }
+  section.dark .tcard .corner, section.mid .tcard .corner{color:#454545;}
+  .tcard .corner.tl{top:-7px;left:-6px;}
+  .tcard .corner.tr{top:-7px;right:-6px;}
+  .tcard .corner.bl{bottom:-7px;left:-6px;}
+  .tcard .corner.br{bottom:-7px;right:-6px;}
+
+  .tcard-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:24px;
+  }
+  .tcard-head svg{width:22px;height:22px;color:#5b584f;}
+  section.dark .tcard-head svg, section.mid .tcard-head svg{color:var(--ink-soft);}
+  .tcard-num{
+    font-size:.78rem;
+    letter-spacing:.05em;
+    color:#8f8a7a;
+  }
+  section.dark .tcard-num, section.mid .tcard-num{color:var(--ink-soft);}
+
+  .tcard h3{
+    margin:0 0 10px;
+    font-weight:400;
+    font-size:clamp(1rem, 1.6vw, 1.15rem);
+    color:#1a1912;
+  }
+  section.dark .tcard h3, section.mid .tcard h3{color:var(--ink-strong);}
+  .tcard p{
     margin:0;
-    font-size:clamp(1rem, 1.4vw, 1.15rem);
-    max-width:640px;
+    font-size:clamp(.92rem, 1.3vw, 1.02rem);
+    color:#4a4732;
   }
+  section.dark .tcard p, section.mid .tcard p{color:var(--ink-soft);}
+
+  /* Hand-drawn annotation marks */
+  .mark{position:relative;white-space:nowrap;font-weight:500;}
+  .mark svg{
+    position:absolute;
+    overflow:visible;
+    pointer-events:none;
+    stroke:var(--orange);
+    fill:none;
+    stroke-width:2.6;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .mark-circle svg{left:-16%;top:-42%;width:132%;height:184%;}
+  .mark-underline svg{left:-3%;bottom:-13px;width:106%;height:14px;}
 
   /* Proposal links */
   .links-grid{
@@ -162,35 +210,70 @@
     color:var(--orange);
   }
 
-  /* Why now */
-  .why-list{
-    display:flex;
-    flex-direction:column;
+  /* Quote / document card */
+  .quote-wrap{display:flex;justify-content:center;}
+  .quote-card{
+    position:relative;
+    background:var(--cream);
+    color:#1a1912;
+    max-width:600px;
+    width:100%;
+    padding:44px 40px 36px;
+    border:1px solid #cfcabc;
+    transform:rotate(-1deg);
+    box-shadow:0 18px 40px rgba(0,0,0,.35);
   }
-  .why-item{
-    display:grid;
-    grid-template-columns:64px 1fr;
-    gap:24px;
-    padding:36px 0;
-    border-top:1px solid #242424;
+  .quote-card .corner{
+    position:absolute;font-size:.78rem;line-height:1;color:#9c9686;
   }
-  .why-item:last-child{border-bottom:1px solid #242424;}
-  .why-item .num{
-    font-weight:500;
-    color:var(--orange);
-    font-size:1.05rem;
-  }
-  .why-item h3{
-    margin:0 0 10px;
+  .quote-card .corner.tl{top:-7px;left:-6px;}
+  .quote-card .corner.tr{top:-7px;right:-6px;}
+  .quote-card .corner.bl{bottom:-7px;left:-6px;}
+  .quote-card .corner.br{bottom:-7px;right:-6px;}
+  .quote-card .tcard-head svg{width:22px;height:22px;color:#5b584f;}
+  .quote-card .tcard-num{font-size:.78rem;letter-spacing:.05em;color:#8f8a7a;}
+  .quote-text{
     font-weight:400;
-    font-size:clamp(1.05rem, 1.8vw, 1.35rem);
+    font-size:clamp(1.05rem, 2vw, 1.3rem);
+    line-height:1.55;
+    margin:0 0 22px;
+  }
+  .quote-author{
+    font-size:.85rem;
+    color:#6b6656;
+  }
+
+  /* Timeline */
+  .timeline{position:relative;padding-left:40px;margin-top:8px;}
+  .timeline::before{
+    content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;
+    background:#333;
+  }
+  .tl-item{position:relative;padding-bottom:56px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";position:absolute;left:-40px;top:4px;
+    width:11px;height:11px;border-radius:50%;
+    background:var(--black);border:2px solid var(--orange);
+  }
+  .tl-num{
+    display:block;
+    font-size:.75rem;
+    letter-spacing:.1em;
+    color:var(--orange);
+    margin-bottom:10px;
+  }
+  .tl-item h3{
+    margin:0 0 8px;
+    font-weight:400;
+    font-size:clamp(1.05rem, 1.8vw, 1.3rem);
     color:var(--ink-strong);
   }
-  .why-item p{
+  .tl-item p{
     margin:0;
-    max-width:620px;
+    max-width:480px;
     color:var(--ink-soft);
-    font-size:clamp(.95rem, 1.3vw, 1.05rem);
+    font-size:clamp(.92rem, 1.3vw, 1.02rem);
   }
 
   /* CTA */
@@ -259,24 +342,40 @@
   <section class="light">
     <div class="wrap">
       <span class="eyebrow">[Quello che abbiamo trovato]</span>
-      <ul class="findings-list">
-        <li>
-          <span class="num">01</span>
-          <p>4,6 su Google, con 45 recensioni reali. Oggi non compaiono da nessuna parte sul sito attuale.</p>
-        </li>
-        <li>
-          <span class="num">02</span>
-          <p>Il capannone e la struttura fisica dell'azienda sono più grandi di quanto il sito attuale lasci intuire.</p>
-        </li>
-        <li>
-          <span class="num">03</span>
-          <p>Due dei tre concorrenti diretti della zona sono messi peggio online in questo momento: uno con il sito fuori uso, l'altro senza sito.</p>
-        </li>
-        <li>
-          <span class="num">04</span>
-          <p>Il link "Offerte" nel menu del sito attuale è rotto.</p>
-        </li>
-      </ul>
+      <div class="card-grid">
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.47 5.24 5.78.58-4.3 3.93 1.18 5.68-5.13-2.94-5.13 2.94 1.18-5.68-4.3-3.93 5.78-.58L12 3.5z"/></svg>
+            <span class="tcard-num">[ 01 ]</span>
+          </div>
+          <p><span class="mark mark-circle">4,6<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path d="M8 32 C 2 14, 22 2, 50 3 C 80 4, 96 16, 92 30 C 88 44, 60 49, 34 46 C 14 44, 4 40, 8 32 Z"/></svg></span> su Google, con <span class="mark mark-underline">45 recensioni reali<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 20 13, 45 4, 70 9 C 82 11, 90 7, 98 10"/></svg></span>. Oggi non compaiono da nessuna parte sul sito attuale.</p>
+        </div>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8.5" width="16" height="12"/><path d="M9 8.5V4h6v4.5"/><path d="M9 13h1.2M13.8 13H15M9 17h1.2M13.8 17H15"/></svg>
+            <span class="tcard-num">[ 02 ]</span>
+          </div>
+          <p>Il capannone e la struttura fisica dell'azienda sono <span class="mark mark-underline">più grandi<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 22 4, 50 13, 70 7 C 82 4, 90 9, 98 6"/></svg></span> di quanto il sito attuale lasci intuire.</p>
+        </div>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-7.6 7-12.2A7 7 0 105 8.8C5 13.4 12 21 12 21z"/><circle cx="12" cy="8.6" r="2.3"/></svg>
+            <span class="tcard-num">[ 03 ]</span>
+          </div>
+          <p><span class="mark mark-circle">Due dei tre<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path d="M6 30 C 0 12, 24 1, 50 2 C 78 3, 98 15, 90 29 C 84 42, 56 48, 32 45 C 12 43, 2 38, 6 30 Z"/></svg></span> concorrenti diretti della zona sono messi peggio online: uno con il sito fuori uso, l'altro senza sito.</p>
+        </div>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.3" cy="10.3" r="6.3"/><path d="M19.5 19.5l-5.2-5.2"/></svg>
+            <span class="tcard-num">[ 04 ]</span>
+          </div>
+          <p>Il link <span class="mark mark-underline">"Offerte"<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 20 12, 44 5, 70 10 C 82 12, 90 8, 98 9"/></svg></span> nel menu del sito attuale è rotto.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -298,37 +397,82 @@
     </div>
   </section>
 
-  <section class="mid">
+  <section class="light">
     <div class="wrap">
       <span class="eyebrow">[Perché ora]</span>
-      <div class="why-list">
-        <div class="why-item">
-          <span class="num">01</span>
-          <div>
-            <h3>Prova sociale reale, invisibile</h3>
-            <p>La Lavanderie Tortonesi ha una reputazione solida: 4,6 stelle, 45 recensioni vere. Ma chi cerca l'azienda online oggi non trova questa prova da nessuna parte. È fiducia già conquistata che nessuno riesce a vedere.</p>
+      <div class="card-grid">
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.47 5.24 5.78.58-4.3 3.93 1.18 5.68-5.13-2.94-5.13 2.94 1.18-5.68-4.3-3.93 5.78-.58L12 3.5z"/></svg>
+            <span class="tcard-num">[ 01 ]</span>
           </div>
+          <h3>Prova sociale reale, invisibile</h3>
+          <p>La Lavanderie Tortonesi ha una reputazione solida: 4,6 stelle, 45 recensioni vere. Ma chi cerca l'azienda online oggi non trova questa prova da nessuna parte. È fiducia già conquistata che nessuno riesce a vedere.</p>
         </div>
-        <div class="why-item">
-          <span class="num">02</span>
-          <div>
-            <h3>Il divario tra struttura reale e comunicazione</h3>
-            <p>Capannone, attrezzatura, scala dell'operazione: tutto più grande di quanto il sito attuale lasci intuire. Chi visita il sito oggi si fa un'idea più piccola dell'azienda di quella reale.</p>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8.5" width="16" height="12"/><path d="M9 8.5V4h6v4.5"/><path d="M9 13h1.2M13.8 13H15M9 17h1.2M13.8 17H15"/></svg>
+            <span class="tcard-num">[ 02 ]</span>
           </div>
+          <h3>Il divario tra struttura reale e comunicazione</h3>
+          <p>Capannone, attrezzatura, scala dell'operazione: tutto più grande di quanto il sito attuale lasci intuire. Chi visita il sito oggi si fa un'idea più piccola dell'azienda di quella reale.</p>
         </div>
-        <div class="why-item">
-          <span class="num">03</span>
-          <div>
-            <h3>Una finestra che non resta aperta</h3>
-            <p>Due dei tre concorrenti diretti della zona sono messi peggio online in questo momento. Non è una condizione permanente. Muoversi ora significa arrivare prima che la situazione cambi.</p>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-7.6 7-12.2A7 7 0 105 8.8C5 13.4 12 21 12 21z"/><circle cx="12" cy="8.6" r="2.3"/></svg>
+            <span class="tcard-num">[ 03 ]</span>
           </div>
+          <h3>Una finestra che non resta aperta</h3>
+          <p>Due dei tre concorrenti diretti della zona sono messi peggio online in questo momento. Non è una condizione permanente. Muoversi ora significa arrivare prima che la situazione cambi.</p>
         </div>
-        <div class="why-item">
-          <span class="num">04</span>
-          <div>
-            <h3>L'attenzione al dettaglio conta</h3>
-            <p>Anche un link rotto nel menu del sito attuale, quello di "Offerte", è stato mappato. È il tipo di cura che di solito nessuno nota finché qualcuno non lo fa notare.</p>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.3" cy="10.3" r="6.3"/><path d="M19.5 19.5l-5.2-5.2"/></svg>
+            <span class="tcard-num">[ 04 ]</span>
           </div>
+          <h3>L'attenzione al dettaglio conta</h3>
+          <p>Anche un link rotto nel menu del sito attuale, quello di "Offerte", è stato mappato. È il tipo di cura che di solito nessuno nota finché qualcuno non lo fa notare.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap quote-wrap">
+      <div class="quote-card">
+        <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+        <div class="tcard-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.47 5.24 5.78.58-4.3 3.93 1.18 5.68-5.13-2.94-5.13 2.94 1.18-5.68-4.3-3.93 5.78-.58L12 3.5z"/></svg>
+          <span class="tcard-num">[ REVIEW ]</span>
+        </div>
+        <p class="quote-text">"Consigliatissima, sono riusciti ad aiutarmi a rimettere a posto il mio divano sfoderabile rovinato da macchie dovute a maldestri lavori di ritinteggiatura, senza di loro non so come avrei potuto risolvere e comunque in linea generale eccellono in professionalità, disponibilità, puntualità e qualità!!!"</p>
+        <div class="quote-author">— Daniela Perillo, Google, 6 anni fa</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <span class="eyebrow">[Cosa succede dopo]</span>
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="tl-num">[ FASE 1 ]</span>
+          <h3>Approvazione</h3>
+          <p>Il cliente rivede la proposta e approva il progetto.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-num">[ FASE 2 ]</span>
+          <h3>Personalizzazione finale</h3>
+          <p>Dominio proprio e ultimi aggiustamenti al sito.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-num">[ FASE 3 ]</span>
+          <h3>Pubblicazione</h3>
+          <p>Il sito va online.</p>
         </div>
       </div>
     </div>
