@@ -22,7 +22,7 @@
     --ink-strong:#D8D8D8;
   }
   *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth;overflow-x:hidden;}
   body{
     margin:0;
     background:var(--black);
@@ -106,9 +106,12 @@
     gap:44px 48px;
   }
   @media (max-width:720px){.card-grid{grid-template-columns:1fr;gap:52px;}}
+  .tcard.span-2{grid-column:1 / -1;}
+  .tcard.span-2 p{max-width:640px;}
 
   .tcard{
     position:relative;
+    min-width:0;
     border:1px dashed #b6b0a0;
     padding:30px 26px 26px;
   }
@@ -183,14 +186,19 @@
   @media (max-width:720px){.links-grid{grid-template-columns:1fr;}}
   .link-card{
     background:var(--black);
-    padding:40px 32px;
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+  }
+  .link-card-top{
+    padding:40px 32px 24px;
     text-decoration:none;
     display:flex;
     flex-direction:column;
     gap:18px;
     transition:background .2s ease;
   }
-  .link-card:hover{background:var(--black-alt2);}
+  .link-card-top:hover{background:var(--black-alt2);}
   .link-card .tag{
     font-size:.72rem;
     letter-spacing:.12em;
@@ -204,9 +212,71 @@
     color:var(--ink-strong);
   }
   .link-card .go{
-    margin-top:auto;
     font-size:.85rem;
     color:var(--orange);
+  }
+
+  /* Browser-frame preview */
+  .browser-frame{
+    position:relative;
+    margin:8px 28px 32px;
+  }
+  .browser-frame::before{
+    content:"";
+    position:absolute;
+    inset:-18px;
+    background:radial-gradient(ellipse at 50% 30%, rgba(255,77,0,.16), transparent 72%);
+    filter:blur(18px);
+    z-index:0;
+  }
+  .browser-chrome{
+    position:relative;
+    z-index:1;
+    border-radius:8px;
+    overflow:hidden;
+    background:#0b0b0b;
+    box-shadow:0 0 0 1px #2a2a2a, 0 28px 50px -18px rgba(0,0,0,.6);
+  }
+  .browser-bar{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:9px 12px;
+    background:#161513;
+    border-bottom:1px solid #262523;
+  }
+  .browser-bar .dot{
+    width:7px;height:7px;
+    border-radius:50%;
+    background:#3a3936;
+    flex-shrink:0;
+  }
+  .browser-url{
+    margin-left:8px;
+    font-size:.66rem;
+    color:var(--ink-soft);
+    background:#101010;
+    border:1px solid #262523;
+    border-radius:4px;
+    padding:3px 10px;
+    flex:1;
+    min-width:0;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .browser-body{
+    height:260px;
+    overflow:hidden;
+    position:relative;
+  }
+  @media (max-width:720px){.browser-body{height:220px;}}
+  .browser-body iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+    pointer-events:none;
   }
 
   /* Quote / document card */
@@ -240,25 +310,6 @@
   .quote-author{
     font-size:.85rem;
     color:#6b6656;
-  }
-
-  /* Change list */
-  .change-list{
-    list-style:none;margin:0;padding:0;
-    display:flex;flex-direction:column;gap:22px;
-    max-width:640px;
-  }
-  .change-list li{
-    position:relative;
-    padding-left:30px;
-    font-size:clamp(.95rem, 1.3vw, 1.05rem);
-    color:var(--ink-strong);
-    line-height:1.55;
-  }
-  .change-list li::before{
-    content:"→";
-    position:absolute;left:0;top:0;
-    color:var(--orange);
   }
 
   /* Timeline */
@@ -405,16 +456,42 @@
     <div class="wrap">
       <span class="eyebrow">[La proposta]</span>
       <div class="links-grid">
-        <a class="link-card" href="https://matecoelho.github.io/demo-lavanderie-tortonesi/" target="_blank" rel="noopener">
-          <span class="tag">Demo</span>
-          <h3>Come potrebbe essere il nuovo sito</h3>
-          <span class="go">Apri la demo ↗</span>
-        </a>
-        <a class="link-card" href="https://matecoelho.github.io/before-after/lavanderie-tortonesi/" target="_blank" rel="noopener">
-          <span class="tag">Prima / Dopo</span>
-          <h3>Confronto diretto con il sito attuale</h3>
-          <span class="go">Apri il confronto ↗</span>
-        </a>
+        <div class="link-card">
+          <a class="link-card-top" href="https://matecoelho.github.io/demo-lavanderie-tortonesi/" target="_blank" rel="noopener">
+            <span class="tag">Demo</span>
+            <h3>Come potrebbe essere il nuovo sito</h3>
+            <span class="go">Apri la demo ↗</span>
+          </a>
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <div class="browser-bar">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <span class="browser-url">matecoelho.github.io/demo-lavanderie-tortonesi</span>
+              </div>
+              <div class="browser-body" data-autoscroll>
+                <iframe src="https://matecoelho.github.io/demo-lavanderie-tortonesi/" loading="lazy" tabindex="-1" aria-hidden="true" title="Anteprima demo"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="link-card">
+          <a class="link-card-top" href="https://matecoelho.github.io/before-after/lavanderie-tortonesi/" target="_blank" rel="noopener">
+            <span class="tag">Prima / Dopo</span>
+            <h3>Confronto diretto con il sito attuale</h3>
+            <span class="go">Apri il confronto ↗</span>
+          </a>
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <div class="browser-bar">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <span class="browser-url">matecoelho.github.io/before-after/lavanderie-tortonesi</span>
+              </div>
+              <div class="browser-body" data-autoscroll>
+                <iframe src="https://matecoelho.github.io/before-after/lavanderie-tortonesi/" loading="lazy" tabindex="-1" aria-hidden="true" title="Anteprima confronto prima e dopo"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -436,12 +513,53 @@
   <section class="dark">
     <div class="wrap">
       <span class="eyebrow">[Cosa cambia con il nuovo sito]</span>
-      <ul class="change-list">
-        <li>SEO tecnico corretto (title, meta description, struttura) — già attivo.</li>
-        <li>SEO avanzato e ottimizzazione per gli strumenti di intelligenza artificiale fanno parte del nostro servizio.</li>
-        <li>Le recensioni reali, oggi invisibili, sono esposte direttamente nel nuovo sito.</li>
-        <li>Una pagina unica che guida il visitatore, invece della frammentazione in più pagine del sito attuale.</li>
-      </ul>
+      <div class="card-grid">
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.3" cy="10.3" r="6.3"/><path d="M19.5 19.5l-5.2-5.2"/></svg>
+            <span class="tcard-num">[ 01 ]</span>
+          </div>
+          <h3>Google finalmente capisce di cosa parla il sito</h3>
+          <p>Quando qualcuno cerca "lavanderia industriale Tortona" su Google, il motore legge informazioni tecniche invisibili (i metadati) per decidere cosa mostrare. Il sito attuale non le ha. Il nuovo sito sì: è la differenza tra apparire o restare <span class="mark mark-underline">invisibili<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 20 13, 45 4, 70 9 C 82 11, 90 7, 98 10"/></svg></span>.</p>
+        </div>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3.2M12 17.8V21M3 12h3.2M17.8 12H21M6 6l2.2 2.2M15.8 15.8L18 18M6 18l2.2-2.2M15.8 8.2L18 6"/></svg>
+            <span class="tcard-num">[ 02 ]</span>
+          </div>
+          <h3>Pronto anche per chi chiede a un'intelligenza artificiale</h3>
+          <p>Sempre più persone chiedono direttamente a <span class="mark mark-circle">ChatGPT<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path d="M8 32 C 2 14, 22 2, 50 3 C 80 4, 96 16, 92 30 C 88 44, 60 49, 34 46 C 14 44, 4 40, 8 32 Z"/></svg></span> o assistenti simili prima di scegliere un'azienda, invece di cercare su Google. Il nuovo sito nasce pensato anche per questo, non solo per la ricerca tradizionale.</p>
+        </div>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.47 5.24 5.78.58-4.3 3.93 1.18 5.68-5.13-2.94-5.13 2.94 1.18-5.68-4.3-3.93 5.78-.58L12 3.5z"/></svg>
+            <span class="tcard-num">[ 03 ]</span>
+          </div>
+          <h3>Le recensioni vere, finalmente visibili</h3>
+          <p>4,6 stelle e 45 recensioni reali che oggi nessuno vede diventano la prima cosa che chi visita il sito trova: fiducia già conquistata, <span class="mark mark-underline">ora esposta<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 22 4, 50 13, 70 7 C 82 4, 90 9, 98 6"/></svg></span>.</p>
+        </div>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="1"/><path d="M9 8h6M9 12h6M9 16h3.5"/></svg>
+            <span class="tcard-num">[ 04 ]</span>
+          </div>
+          <h3>Un percorso unico, non una caccia al tesoro tra pagine</h3>
+          <p>Il sito attuale obbliga a cliccare tra pagine diverse per trovare le informazioni. Il nuovo sito racconta tutto in <span class="mark mark-underline">un unico percorso<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 20 12, 44 5, 70 10 C 82 12, 90 8, 98 9"/></svg></span>, senza far perdere tempo a chi visita.</p>
+        </div>
+        <div class="tcard span-2">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.1c-.24.68-1.4 1.33-1.93 1.4-.49.07-1.11.1-1.79-.11a16.3 16.3 0 01-1.62-.6c-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.08.99-2.37.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.29.29-.12.57.16.28.73 1.2 1.57 1.95 1.08.96 1.98 1.26 2.27 1.4.28.14.45.12.62-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.62-.14.26.1 1.63.77 1.9.91.28.14.46.21.53.33.07.12.07.68-.17 1.35z"/></svg>
+            <span class="tcard-num">[ 05 ]</span>
+          </div>
+          <h3>Un contatto diretto su WhatsApp</h3>
+          <p>Oggi la maggior parte delle persone preferisce scrivere piuttosto che telefonare. Un pulsante <span class="mark mark-circle">WhatsApp<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path d="M6 30 C 0 12, 24 1, 50 2 C 78 3, 98 15, 90 29 C 84 42, 56 48, 32 45 C 12 43, 2 38, 6 30 Z"/></svg></span> diretto (già nel demo, testato) riduce la distanza tra chi visita il sito e l'azienda.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -482,6 +600,71 @@
   <footer>
     <p>Coeso Digital — Materiale riservato, non indicizzato</p>
   </footer>
+
+<script>
+  (function(){
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    var frames = document.querySelectorAll('.browser-body[data-autoscroll]');
+
+    frames.forEach(function(wrap){
+      var iframe = wrap.querySelector('iframe');
+      if (!iframe) return;
+
+      var scrollY = 0;
+      var direction = 1;
+      var maxScroll = 0;
+      var pauseUntil = 0;
+      var inView = false;
+      var speed = 0.35;
+
+      function measure(){
+        try {
+          var doc = iframe.contentDocument;
+          if (doc && doc.documentElement) {
+            maxScroll = Math.max(0, doc.documentElement.scrollHeight - iframe.clientHeight);
+          }
+        } catch(e) { /* same-origin expected; ignore if it ever fails */ }
+      }
+
+      iframe.addEventListener('load', function(){
+        scrollY = 0;
+        direction = 1;
+        measure();
+        setTimeout(measure, 700);
+        setTimeout(measure, 1800);
+        pauseUntil = performance.now() + 900;
+      });
+
+      var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){ inView = entry.isIntersecting; });
+      }, { threshold: 0.15 });
+      observer.observe(wrap);
+
+      function tick(now){
+        requestAnimationFrame(tick);
+        if (!inView || maxScroll <= 0 || now < pauseUntil) return;
+
+        scrollY += direction * speed;
+
+        if (scrollY >= maxScroll) {
+          scrollY = maxScroll;
+          direction = -1;
+          pauseUntil = now + 1800;
+        } else if (scrollY <= 0) {
+          scrollY = 0;
+          direction = 1;
+          pauseUntil = now + 1300;
+        }
+
+        try { iframe.contentWindow.scrollTo(0, scrollY); } catch(e){}
+      }
+
+      requestAnimationFrame(tick);
+    });
+  })();
+</script>
 
 </body>
 </html>
