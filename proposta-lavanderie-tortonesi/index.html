@@ -91,7 +91,6 @@
   /* Section base */
   section{padding:96px 0;}
   section.light{background:var(--cream);color:#1a1912;}
-  section.mid{background:var(--black-alt2);}
 
   hr.rule{
     border:0;border-top:1px solid #242424;
@@ -113,7 +112,7 @@
     border:1px dashed #b6b0a0;
     padding:30px 26px 26px;
   }
-  section.dark .tcard, section.mid .tcard{border-color:#3a3a3a;}
+  section.dark .tcard{border-color:#3a3a3a;}
 
   .tcard .corner{
     position:absolute;
@@ -123,7 +122,7 @@
     font-weight:400;
     user-select:none;
   }
-  section.dark .tcard .corner, section.mid .tcard .corner{color:#454545;}
+  section.dark .tcard .corner{color:#454545;}
   .tcard .corner.tl{top:-7px;left:-6px;}
   .tcard .corner.tr{top:-7px;right:-6px;}
   .tcard .corner.bl{bottom:-7px;left:-6px;}
@@ -136,13 +135,13 @@
     margin-bottom:24px;
   }
   .tcard-head svg{width:22px;height:22px;color:#5b584f;}
-  section.dark .tcard-head svg, section.mid .tcard-head svg{color:var(--ink-soft);}
+  section.dark .tcard-head svg{color:var(--ink-soft);}
   .tcard-num{
     font-size:.78rem;
     letter-spacing:.05em;
     color:#8f8a7a;
   }
-  section.dark .tcard-num, section.mid .tcard-num{color:var(--ink-soft);}
+  section.dark .tcard-num{color:var(--ink-soft);}
 
   .tcard h3{
     margin:0 0 10px;
@@ -150,13 +149,13 @@
     font-size:clamp(1rem, 1.6vw, 1.15rem);
     color:#1a1912;
   }
-  section.dark .tcard h3, section.mid .tcard h3{color:var(--ink-strong);}
+  section.dark .tcard h3{color:var(--ink-strong);}
   .tcard p{
     margin:0;
     font-size:clamp(.92rem, 1.3vw, 1.02rem);
     color:#4a4732;
   }
-  section.dark .tcard p, section.mid .tcard p{color:var(--ink-soft);}
+  section.dark .tcard p{color:var(--ink-soft);}
 
   /* Hand-drawn annotation marks */
   .mark{position:relative;white-space:nowrap;font-weight:500;}
@@ -241,6 +240,25 @@
   .quote-author{
     font-size:.85rem;
     color:#6b6656;
+  }
+
+  /* Change list */
+  .change-list{
+    list-style:none;margin:0;padding:0;
+    display:flex;flex-direction:column;gap:22px;
+    max-width:640px;
+  }
+  .change-list li{
+    position:relative;
+    padding-left:30px;
+    font-size:clamp(.95rem, 1.3vw, 1.05rem);
+    color:var(--ink-strong);
+    line-height:1.55;
+  }
+  .change-list li::before{
+    content:"→";
+    position:absolute;left:0;top:0;
+    color:var(--orange);
   }
 
   /* Timeline */
@@ -349,7 +367,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.47 5.24 5.78.58-4.3 3.93 1.18 5.68-5.13-2.94-5.13 2.94 1.18-5.68-4.3-3.93 5.78-.58L12 3.5z"/></svg>
             <span class="tcard-num">[ 01 ]</span>
           </div>
-          <p><span class="mark mark-circle">4,6<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path d="M8 32 C 2 14, 22 2, 50 3 C 80 4, 96 16, 92 30 C 88 44, 60 49, 34 46 C 14 44, 4 40, 8 32 Z"/></svg></span> su Google, con <span class="mark mark-underline">45 recensioni reali<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 20 13, 45 4, 70 9 C 82 11, 90 7, 98 10"/></svg></span>. Oggi non compaiono da nessuna parte sul sito attuale.</p>
+          <h3><span class="mark mark-circle">4,6<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path d="M8 32 C 2 14, 22 2, 50 3 C 80 4, 96 16, 92 30 C 88 44, 60 49, 34 46 C 14 44, 4 40, 8 32 Z"/></svg></span> su Google, <span class="mark mark-underline">45 recensioni reali<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 20 13, 45 4, 70 9 C 82 11, 90 7, 98 10"/></svg></span> — invisibili sul sito</h3>
+          <p>Chi cerca l'azienda online prima di scegliere non vede nessuna di queste recensioni. È fiducia costruita in decenni di lavoro, invisibile proprio nel momento in cui conta.</p>
         </div>
         <div class="tcard">
           <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
@@ -357,7 +376,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8.5" width="16" height="12"/><path d="M9 8.5V4h6v4.5"/><path d="M9 13h1.2M13.8 13H15M9 17h1.2M13.8 17H15"/></svg>
             <span class="tcard-num">[ 02 ]</span>
           </div>
-          <p>Il capannone e la struttura fisica dell'azienda sono <span class="mark mark-underline">più grandi<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 22 4, 50 13, 70 7 C 82 4, 90 9, 98 6"/></svg></span> di quanto il sito attuale lasci intuire.</p>
+          <h3>Una struttura più solida della maggior parte dei concorrenti — un sito che non lo dimostra</h3>
+          <p>Capannone, macchinari, tre generazioni di attività: <span class="mark mark-underline">l'operazione reale supera<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 22 4, 50 13, 70 7 C 82 4, 90 9, 98 6"/></svg></span> quella di due dei tre concorrenti diretti della zona. Ma è il sito, non la realtà, che un potenziale cliente vede per primo — e oggi non riflette questo vantaggio.</p>
         </div>
         <div class="tcard">
           <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
@@ -365,7 +385,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-7.6 7-12.2A7 7 0 105 8.8C5 13.4 12 21 12 21z"/><circle cx="12" cy="8.6" r="2.3"/></svg>
             <span class="tcard-num">[ 03 ]</span>
           </div>
-          <p><span class="mark mark-circle">Due dei tre<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path d="M6 30 C 0 12, 24 1, 50 2 C 78 3, 98 15, 90 29 C 84 42, 56 48, 32 45 C 12 43, 2 38, 6 30 Z"/></svg></span> concorrenti diretti della zona sono messi peggio online: uno con il sito fuori uso, l'altro senza sito.</p>
+          <h3><span class="mark mark-circle">2 dei 3<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path d="M6 30 C 0 12, 24 1, 50 2 C 78 3, 98 15, 90 29 C 84 42, 56 48, 32 45 C 12 43, 2 38, 6 30 Z"/></svg></span> concorrenti diretti sono messi peggio online, proprio ora</h3>
+          <p>Uno con il sito fuori uso, l'altro senza sito. Una finestra reale, non garantita per sempre.</p>
         </div>
         <div class="tcard">
           <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
@@ -373,7 +394,8 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.3" cy="10.3" r="6.3"/><path d="M19.5 19.5l-5.2-5.2"/></svg>
             <span class="tcard-num">[ 04 ]</span>
           </div>
-          <p>Il link <span class="mark mark-underline">"Offerte"<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 20 12, 44 5, 70 10 C 82 12, 90 8, 98 9"/></svg></span> nel menu del sito attuale è rotto.</p>
+          <h3>Anche il dettaglio più piccolo è stato controllato</h3>
+          <p>Il link <span class="mark mark-underline">"Offerte"<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 20 12, 44 5, 70 10 C 82 12, 90 8, 98 9"/></svg></span> nel menu è rotto. Non è un giudizio generico — è una verifica reale, pagina per pagina.</p>
         </div>
       </div>
     </div>
@@ -397,50 +419,6 @@
     </div>
   </section>
 
-  <section class="light">
-    <div class="wrap">
-      <span class="eyebrow">[Perché ora]</span>
-      <div class="card-grid">
-        <div class="tcard">
-          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
-          <div class="tcard-head">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.47 5.24 5.78.58-4.3 3.93 1.18 5.68-5.13-2.94-5.13 2.94 1.18-5.68-4.3-3.93 5.78-.58L12 3.5z"/></svg>
-            <span class="tcard-num">[ 01 ]</span>
-          </div>
-          <h3>Prova sociale reale, invisibile</h3>
-          <p>La Lavanderie Tortonesi ha una reputazione solida: 4,6 stelle, 45 recensioni vere. Ma chi cerca l'azienda online oggi non trova questa prova da nessuna parte. È fiducia già conquistata che nessuno riesce a vedere.</p>
-        </div>
-        <div class="tcard">
-          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
-          <div class="tcard-head">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="8.5" width="16" height="12"/><path d="M9 8.5V4h6v4.5"/><path d="M9 13h1.2M13.8 13H15M9 17h1.2M13.8 17H15"/></svg>
-            <span class="tcard-num">[ 02 ]</span>
-          </div>
-          <h3>Il divario tra struttura reale e comunicazione</h3>
-          <p>Capannone, attrezzatura, scala dell'operazione: tutto più grande di quanto il sito attuale lasci intuire. Chi visita il sito oggi si fa un'idea più piccola dell'azienda di quella reale.</p>
-        </div>
-        <div class="tcard">
-          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
-          <div class="tcard-head">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-7.6 7-12.2A7 7 0 105 8.8C5 13.4 12 21 12 21z"/><circle cx="12" cy="8.6" r="2.3"/></svg>
-            <span class="tcard-num">[ 03 ]</span>
-          </div>
-          <h3>Una finestra che non resta aperta</h3>
-          <p>Due dei tre concorrenti diretti della zona sono messi peggio online in questo momento. Non è una condizione permanente. Muoversi ora significa arrivare prima che la situazione cambi.</p>
-        </div>
-        <div class="tcard">
-          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
-          <div class="tcard-head">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.3" cy="10.3" r="6.3"/><path d="M19.5 19.5l-5.2-5.2"/></svg>
-            <span class="tcard-num">[ 04 ]</span>
-          </div>
-          <h3>L'attenzione al dettaglio conta</h3>
-          <p>Anche un link rotto nel menu del sito attuale, quello di "Offerte", è stato mappato. È il tipo di cura che di solito nessuno nota finché qualcuno non lo fa notare.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="dark">
     <div class="wrap quote-wrap">
       <div class="quote-card">
@@ -452,6 +430,18 @@
         <p class="quote-text">"Consigliatissima, sono riusciti ad aiutarmi a rimettere a posto il mio divano sfoderabile rovinato da macchie dovute a maldestri lavori di ritinteggiatura, senza di loro non so come avrei potuto risolvere e comunque in linea generale eccellono in professionalità, disponibilità, puntualità e qualità!!!"</p>
         <div class="quote-author">— Daniela Perillo, Google, 6 anni fa</div>
       </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <span class="eyebrow">[Cosa cambia con il nuovo sito]</span>
+      <ul class="change-list">
+        <li>SEO tecnico corretto (title, meta description, struttura) — già attivo.</li>
+        <li>SEO avanzato e ottimizzazione per gli strumenti di intelligenza artificiale fanno parte del nostro servizio.</li>
+        <li>Le recensioni reali, oggi invisibili, sono esposte direttamente nel nuovo sito.</li>
+        <li>Una pagina unica che guida il visitatore, invece della frammentazione in più pagine del sito attuale.</li>
+      </ul>
     </div>
   </section>
 
