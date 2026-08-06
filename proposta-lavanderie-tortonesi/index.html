@@ -65,7 +65,8 @@
 
   /* Hero */
   .hero{
-    padding:64px 0 100px;
+    padding-top:64px;
+    padding-bottom:100px;
   }
   .hero h1{
     font-weight:300;
@@ -86,7 +87,12 @@
     border:1px solid #333;
     border-radius:50%;
     margin-top:56px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--ink-soft);
   }
+  .hero-ring svg{width:26px;height:26px;}
 
   /* Section base */
   section{padding:96px 0;}
@@ -403,7 +409,9 @@
     <span class="eyebrow">[Proposta · Coeso Digital]</span>
     <h1>Lavanderie<br>Tortonesi</h1>
     <p>Un'analisi della presenza online dell'azienda e una proposta concreta per farla corrispondere a quello che è davvero.</p>
-    <div class="hero-ring" aria-hidden="true"></div>
+    <div class="hero-ring" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v13M6 13l6 6 6-6"/></svg>
+    </div>
   </section>
 
   <hr class="rule">
@@ -588,7 +596,7 @@
 
   <section class="dark cta">
     <div class="wrap">
-      <h2>Parliamone</h2>
+      <h2>Scrivici su WhatsApp</h2>
       <p>Nessun modulo da compilare. Scrivi direttamente su WhatsApp.</p>
       <a class="wa-btn" href="https://wa.me/393479780606?text=Ciao%2C%20ho%20visto%20la%20proposta%20di%20Coeso%20Digital%20per%20Lavanderie%20Tortonesi." target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.1c-.24.68-1.4 1.33-1.93 1.4-.49.07-1.11.1-1.79-.11a16.3 16.3 0 01-1.62-.6c-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.08.99-2.37.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.29.29-.12.57.16.28.73 1.2 1.57 1.95 1.08.96 1.98 1.26 2.27 1.4.28.14.45.12.62-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.62-.14.26.1 1.63.77 1.9.91.28.14.46.21.53.33.07.12.07.68-.17 1.35z"/></svg>
@@ -598,7 +606,9 @@
   </section>
 
   <footer>
-    <p>Coeso Digital — Materiale riservato, non indicizzato</p>
+    <div class="wrap">
+      <p>Coeso Digital — Materiale riservato, non indicizzato</p>
+    </div>
   </footer>
 
 <script>
