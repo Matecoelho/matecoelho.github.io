@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Gelateria La Sala — Proposta Coeso Digital</title>
+<meta name="description" content="Analisi della presenza online della Gelateria La Sala e proposta di Coeso Digital.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#080808;
+    --black-alt:#0D0D0D;
+    --black-alt2:#14130F;
+    --gray-mid:#242424;
+    --cream:#ECE9E3;
+    --cream-alt:#D4D0C6;
+    --red:#C81E22;
+    --whatsapp:#25D366;
+    --ink-soft:#9A9A9A;
+    --ink-strong:#D8D8D8;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;overflow-x:hidden;}
+  body{
+    margin:0;
+    background:var(--black);
+    color:var(--ink-strong);
+    font-family:'Martian Mono', monospace;
+    font-weight:400;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  a{color:inherit;}
+
+  header{padding:26px 0;}
+  .header-row{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;}
+  .brand{
+    font-size:.72rem;
+    letter-spacing:.14em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+  }
+  .reading-time{
+    font-size:.72rem;
+    letter-spacing:.1em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    white-space:nowrap;
+  }
+
+  .eyebrow{
+    display:inline-block;
+    font-weight:300;
+    font-size:clamp(1rem, 2vw, 1.35rem);
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:0 0 28px;
+  }
+  section.dark .eyebrow{color:var(--ink-soft);}
+  section.light .eyebrow{color:#5b584f;}
+
+  .hero{padding-top:44px; padding-bottom:100px;}
+  .hero-logo{width:150px; height:auto; display:block; margin-bottom:32px;}
+  @media (max-width:720px){.hero-logo{width:120px;}}
+  .hero h1{
+    font-weight:300;
+    font-size:clamp(2.2rem, 8vw, 5.4rem);
+    line-height:1.05;
+    letter-spacing:-.01em;
+    margin:0 0 32px;
+    text-transform:uppercase;
+  }
+  .hero p{
+    max-width:640px;
+    font-size:clamp(1rem, 1.6vw, 1.15rem);
+    color:var(--ink-strong);
+    margin:0;
+  }
+  .hero p.section-sub{
+    font-size:clamp(.85rem, 1.2vw, .95rem);
+    color:var(--ink-soft);
+    margin:28px 0 0;
+  }
+  .hero-ring{
+    width:120px;height:120px;
+    border:1px solid #333;
+    border-radius:50%;
+    margin-top:56px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--ink-soft);
+  }
+  .hero-ring svg{width:26px;height:26px;}
+
+  section{padding:96px 0;}
+  section.light{background:var(--cream);color:#1a1912;}
+
+  hr.rule{border:0;border-top:1px solid #242424;margin:0;}
+  section.light + section hr.rule,
+  section.light hr.rule{border-top-color:#cfcabc;}
+
+  .section-lead{
+    font-weight:300;
+    font-size:clamp(1.5rem, 3.6vw, 2.4rem);
+    line-height:1.2;
+    margin:0 0 20px;
+    max-width:760px;
+  }
+  section.light .section-lead{color:#1a1912;}
+  section.dark .section-lead{color:var(--ink-strong);}
+
+  .section-sub{
+    font-size:clamp(.95rem, 1.4vw, 1.05rem);
+    max-width:640px;
+    margin:0 0 48px;
+  }
+  section.light .section-sub{color:#4a4732;}
+  section.dark .section-sub{color:var(--ink-soft);}
+
+  .card-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:44px 48px;
+  }
+  @media (max-width:720px){.card-grid{grid-template-columns:1fr;gap:52px;}}
+  .tcard.span-2{grid-column:1 / -1;}
+  .tcard.span-2 p{max-width:640px;}
+
+  .tcard{
+    position:relative;
+    min-width:0;
+    border:1px dashed #b6b0a0;
+    padding:30px 26px 26px;
+  }
+  section.dark .tcard{border-color:#3a3a3a;}
+
+  .tcard .corner{
+    position:absolute;
+    font-size:.78rem;
+    line-height:1;
+    color:#9c9686;
+    font-weight:400;
+    user-select:none;
+  }
+  section.dark .tcard .corner{color:#454545;}
+  .tcard .corner.tl{top:-7px;left:-6px;}
+  .tcard .corner.tr{top:-7px;right:-6px;}
+  .tcard .corner.bl{bottom:-7px;left:-6px;}
+  .tcard .corner.br{bottom:-7px;right:-6px;}
+
+  .tcard-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:24px;
+  }
+  .tcard-head svg{width:22px;height:22px;color:#5b584f;}
+  section.dark .tcard-head svg{color:var(--ink-soft);}
+  .tcard-num{font-size:.78rem; letter-spacing:.05em; color:#8f8a7a;}
+  section.dark .tcard-num{color:var(--ink-soft);}
+
+  .tcard h3{
+    margin:0 0 10px;
+    font-weight:400;
+    font-size:clamp(1rem, 1.6vw, 1.15rem);
+    color:#1a1912;
+  }
+  section.dark .tcard h3{color:var(--ink-strong);}
+  .tcard p{
+    margin:0;
+    font-size:clamp(.92rem, 1.3vw, 1.02rem);
+    color:#4a4732;
+  }
+  section.dark .tcard p{color:var(--ink-soft);}
+
+  .mark{position:relative;white-space:nowrap;font-weight:500;}
+  .mark svg{
+    position:absolute;
+    overflow:visible;
+    pointer-events:none;
+    stroke:var(--red);
+    fill:none;
+    stroke-width:2.6;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .mark-circle svg{left:-16%;top:-42%;width:132%;height:184%;}
+  .mark-underline svg{left:-3%;bottom:-13px;width:106%;height:14px;}
+
+  /* Technical findings grid */
+  .tech-subhead{
+    font-weight:400;
+    font-size:.95rem;
+    text-transform:uppercase;
+    letter-spacing:.06em;
+    color:#5b584f;
+    margin:64px 0 28px;
+  }
+  .tech-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:#cfcabc;
+    border:1px solid #cfcabc;
+  }
+  @media (max-width:860px){.tech-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.tech-grid{grid-template-columns:1fr;}}
+  .tech-item{
+    background:var(--cream);
+    padding:22px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    min-width:0;
+  }
+  .tech-item svg{width:20px;height:20px;color:#8f8a7a;flex-shrink:0;}
+  .tech-item h4{margin:0; font-size:.92rem; font-weight:600; color:#1a1912; line-height:1.35;}
+  .tech-item p{margin:0; font-size:.82rem; color:#5b584f; line-height:1.55;}
+
+  /* Comparison table */
+  .scroll-hint{display:none; font-size:.78rem; letter-spacing:.04em; color:#8f8a7a; margin:48px 0 0; align-items:center; gap:8px;}
+  .scroll-hint svg{width:16px;height:16px;flex-shrink:0;}
+  @media (max-width:720px){
+    .scroll-hint{display:flex;}
+    .compare-wrap{margin-top:14px;}
+  }
+  .compare-wrap{overflow-x:auto; margin-top:48px; -webkit-overflow-scrolling:touch;}
+  .compare-table{width:100%; border-collapse:collapse; font-size:.84rem; min-width:600px;}
+  .compare-table th, .compare-table td{padding:12px 14px; border:1px solid #cfcabc; text-align:left;}
+  .compare-table th:first-child, .compare-table td:first-child{white-space:nowrap;}
+  .compare-table th{background:#dedad0; font-weight:600; color:#1a1912;}
+  .compare-table td{color:#4a4732; background:var(--cream);}
+  .compare-table td.flag-bad{color:#a4302f; font-weight:600;}
+  .compare-table td.flag-good{color:#3f6b3f; font-weight:600;}
+
+  .verdict{margin-top:36px; padding:26px 28px; border-left:3px solid var(--red); background:#f4f1ea; max-width:760px;}
+  .verdict p{margin:0; font-size:1rem; line-height:1.65; color:#1a1912;}
+  section.dark .verdict{background:#141311;}
+  section.dark .verdict p{color:var(--ink-strong);}
+
+  /* Proposal links */
+  .links-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    max-width:620px;
+    margin:0 auto;
+    background:#242424;
+    border:1px solid #242424;
+  }
+  .link-card{
+    background:var(--black);
+    display:flex;
+    flex-direction:column;
+    min-width:0;
+  }
+  .link-card-top{
+    padding:40px 32px 24px;
+    text-decoration:none;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+    transition:background .2s ease;
+  }
+  .link-card-top:hover{background:var(--black-alt2);}
+  .link-card .tag{
+    font-size:.72rem;
+    letter-spacing:.12em;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+  }
+  .link-card h3{margin:0; font-weight:400; font-size:1.3rem; color:var(--ink-strong);}
+  .link-card .go{font-size:.85rem; color:var(--red);}
+
+  .browser-frame{position:relative; margin:8px 28px 32px;}
+  .browser-frame::before{
+    content:"";
+    position:absolute;
+    inset:-18px;
+    background:radial-gradient(ellipse at 50% 30%, rgba(200,30,34,.18), transparent 72%);
+    filter:blur(18px);
+    z-index:0;
+  }
+  .browser-chrome{
+    position:relative;
+    z-index:1;
+    border-radius:8px;
+    overflow:hidden;
+    background:#0b0b0b;
+    box-shadow:0 0 0 1px #2a2a2a, 0 28px 50px -18px rgba(0,0,0,.6);
+  }
+  .browser-bar{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:9px 12px;
+    background:#161513;
+    border-bottom:1px solid #262523;
+  }
+  .browser-bar .dot{width:7px;height:7px;border-radius:50%;background:#3a3936;flex-shrink:0;}
+  .browser-url{
+    margin-left:8px;
+    font-size:.66rem;
+    color:var(--ink-soft);
+    background:#101010;
+    border:1px solid #262523;
+    border-radius:4px;
+    padding:3px 10px;
+    flex:1;
+    min-width:0;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+  .browser-body{height:300px; overflow:hidden; position:relative;}
+  @media (max-width:720px){.browser-body{height:240px;}}
+  .browser-body iframe{width:100%; height:100%; border:0; display:block; pointer-events:none;}
+
+  .quote-wrap{display:flex;justify-content:center;}
+  .quote-card{
+    position:relative;
+    background:var(--cream);
+    color:#1a1912;
+    max-width:600px;
+    width:100%;
+    padding:44px 40px 36px;
+    border:1px solid #cfcabc;
+    transform:rotate(-1deg);
+    box-shadow:0 18px 40px rgba(0,0,0,.35);
+  }
+  .quote-card.no-tilt{transform:none;}
+  .quote-card .corner{position:absolute;font-size:.78rem;line-height:1;color:#9c9686;}
+  .quote-card .corner.tl{top:-7px;left:-6px;}
+  .quote-card .corner.tr{top:-7px;right:-6px;}
+  .quote-card .corner.bl{bottom:-7px;left:-6px;}
+  .quote-card .corner.br{bottom:-7px;right:-6px;}
+  .quote-card .tcard-head svg{width:22px;height:22px;color:#5b584f;}
+  .quote-card .tcard-num{font-size:.78rem;letter-spacing:.05em;color:#8f8a7a;}
+  .quote-text{
+    font-weight:400;
+    font-size:clamp(1.05rem, 2vw, 1.3rem);
+    line-height:1.55;
+    margin:0 0 22px;
+  }
+  .quote-author{font-size:.85rem; color:#6b6656;}
+
+  /* Perché nessun abbonamento */
+  .lead-line{font-weight:500; font-size:clamp(1.3rem,3vw,1.9rem); color:var(--ink-strong); margin:0 0 44px;}
+
+  .vs-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:1px;
+    background:#242424;
+    border:1px solid #242424;
+    margin-bottom:44px;
+  }
+  @media (max-width:720px){.vs-grid{grid-template-columns:1fr;}}
+  .vs-card{background:var(--black); padding:32px 28px; min-width:0;}
+  .vs-card svg{width:22px;height:22px;color:var(--ink-soft); margin-bottom:16px;}
+  .vs-card h4{margin:0 0 14px; font-weight:400; font-size:1.05rem; color:var(--ink-strong);}
+  .vs-card p{margin:0; font-size:.92rem; color:var(--ink-soft); line-height:1.65;}
+
+  .stat-panel{border:1px dashed #3a3a3a; padding:32px 28px; margin-bottom:44px; max-width:760px;}
+  .stat-panel .tcard-head{margin-bottom:18px;}
+  .stat-panel h3{margin:0 0 14px; font-weight:400; font-size:1.15rem; color:var(--ink-strong);}
+  .stat-panel p{margin:0; font-size:.95rem; color:var(--ink-soft); line-height:1.7;}
+  .stat-panel strong{color:var(--ink-strong);}
+
+  .maint-note{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    max-width:640px;
+    color:var(--ink-soft);
+    font-size:.92rem;
+    line-height:1.65;
+  }
+  .maint-note svg{width:20px;height:20px;flex-shrink:0;margin-top:3px;color:var(--ink-soft);}
+  .maint-note strong{color:var(--ink-strong);}
+
+  /* Timeline */
+  .timeline{position:relative;padding-left:40px;margin-top:8px;}
+  .timeline::before{
+    content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;
+    background:#333;
+  }
+  .tl-item{position:relative;padding-bottom:56px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";position:absolute;left:-40px;top:4px;
+    width:11px;height:11px;border-radius:50%;
+    background:var(--black);border:2px solid var(--red);
+  }
+  .tl-num{display:block; font-size:.75rem; letter-spacing:.1em; color:var(--red); margin-bottom:10px;}
+  .tl-item h3{margin:0 0 8px; font-weight:400; font-size:clamp(1.05rem, 1.8vw, 1.3rem); color:var(--ink-strong);}
+  .tl-item p{margin:0; max-width:480px; color:var(--ink-soft); font-size:clamp(.92rem, 1.3vw, 1.02rem);}
+
+  .cta{text-align:center;}
+  .cta h2{
+    font-weight:300;
+    font-size:clamp(1.8rem, 5vw, 3.2rem);
+    text-transform:uppercase;
+    margin:0 0 20px;
+    line-height:1.1;
+  }
+  .cta p{color:var(--ink-soft); font-size:1rem; max-width:480px; margin:0 auto 40px;}
+  .wa-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+    background:var(--whatsapp);
+    color:#fff;
+    text-decoration:none;
+    font-family:'Martian Mono', monospace;
+    font-weight:600;
+    font-size:.95rem;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    padding:18px 32px;
+    border-radius:2px;
+  }
+  .wa-btn:hover{background:#1fbd5a;}
+  .wa-btn svg{width:18px;height:18px;flex-shrink:0;}
+
+  footer{padding:36px 0 48px; text-align:center;}
+  footer p{margin:0; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase; color:#4a4a4a;}
+  .compare-note{margin:22px 0 0; max-width:760px; font-size:.82rem; line-height:1.6; color:#6b6656;}
+  .compare-note strong{color:#1a1912; font-weight:600;}
+</style>
+</head>
+<body>
+
+  <header class="wrap header-row">
+    <div class="brand">Coeso Digital</div>
+    <div class="reading-time">◷ 5 min di lettura</div>
+  </header>
+
+  <section class="hero wrap dark">
+    <span class="eyebrow">[Proposta · Coeso Digital]</span>
+    <h1>Gelateria La Sala</h1>
+    <p class="section-lead">Dal 1983, le famiglie di Tortona vi scelgono per ogni festa.<br>Online, chi non vi conosce ancora non lo vede.</p>
+    <p class="section-sub">Un'analisi della presenza online della gelateria e una proposta concreta per farla corrispondere a quello che è davvero.</p>
+  </section>
+
+  <hr class="rule">
+
+  <section class="light">
+    <div class="wrap">
+      <span class="eyebrow">[Quello che abbiamo trovato]</span>
+      <h2 class="section-lead">Una reputazione costruita in quarant'anni. Un sito di un'altra epoca.</h2>
+      <p class="section-sub">Abbiamo controllato il sito attuale (codice, pagine, galleria), la scheda Google e le ricerche che i clienti fanno a Tortona. Quello che segue è ciò che abbiamo trovato davvero, non un'opinione.</p>
+
+      <div class="card-grid">
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.47 5.24 5.78.58-4.3 3.93 1.18 5.68-5.13-2.94-5.13 2.94 1.18-5.68-4.3-3.93 5.78-.58L12 3.5z"/></svg>
+            <span class="tcard-num">[ 01 ]</span>
+          </div>
+          <h3><span class="mark mark-circle">4,8<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path d="M8 32 C 2 14, 22 2, 50 3 C 80 4, 96 16, 92 30 C 88 44, 60 49, 34 46 C 14 44, 4 40, 8 32 Z"/></svg></span> su Google, <span class="mark mark-underline">133 recensioni<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 20 13, 45 4, 70 9 C 82 11, 90 7, 98 10"/></svg></span> — invisibili sul sito</h3>
+          <p>C'è chi scrive «18 anni che mi servo da loro». Sul sito di oggi questa fiducia non compare da nessuna parte.</p>
+        </div>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.3" cy="10.3" r="6.3"/><path d="M19.5 19.5l-5.2-5.2"/></svg>
+            <span class="tcard-num">[ 02 ]</span>
+          </div>
+          <h3>«Torte compleanno Tortona»: La Sala non compare</h3>
+          <p>Nella ricerca da smartphone (27 settembre 2026) la gelateria non è tra i primi sei risultati. Eppure in galleria ci sono <span class="mark mark-underline">oltre 300 torte di compleanno<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 20 12, 44 5, 70 10 C 82 12, 90 8, 98 9"/></svg></span>.</p>
+        </div>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="1.5"/><path d="M11 18.5h2"/></svg>
+            <span class="tcard-num">[ 03 ]</span>
+          </div>
+          <h3>Dal telefono il sito si apre tagliato</h3>
+          <p>La pagina è larga <span class="mark mark-underline">960 pixel<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 22 4, 50 13, 70 7 C 82 4, 90 9, 98 6"/></svg></span>: sullo schermo di uno smartphone bisogna spostarla di lato per leggerla. Il menu è fatto di immagini che cambiano al passaggio del mouse, che sul telefono non esiste.</p>
+        </div>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="1.5"/><path d="M3 16l5-5 3.5 3.5L17 9l4 4"/><circle cx="16" cy="8.5" r="1.3"/></svg>
+            <span class="tcard-num">[ 04 ]</span>
+          </div>
+          <h3><span class="mark mark-circle">Oltre 700<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path d="M6 30 C 0 12, 24 1, 50 2 C 78 3, 98 15, 90 29 C 84 42, 56 48, 32 45 C 12 43, 2 38, 6 30 Z"/></svg></span> torte in galleria, che Google non vede</h3>
+          <p>Compleanni, battesimi, comunioni, matrimoni, lauree: un catalogo enorme. Ma la galleria usa un programma dei primi anni 2000, i cui link non portano a pagine vere: per Google, nessuna di queste foto esiste.</p>
+        </div>
+        <div class="tcard span-2">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg>
+            <span class="tcard-num">[ 05 ]</span>
+          </div>
+          <h3>Per ordinare una torta, solo il telefono</h3>
+          <p>Nessun pulsante WhatsApp. E nessun collegamento al canale YouTube della gelateria, con oltre 1.600 video di torte e gelati.</p>
+        </div>
+      </div>
+
+      <h3 class="tech-subhead">[ E anche i dettagli tecnici raccontano la stessa storia ]</h3>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="1.5"/><path d="M3 9h18M8.5 5v4"/></svg>
+          <h4>Il titolo della pagina è solo «Sala»</h4>
+          <p>È quello che compare nella scheda del browser e su Google. Nella galleria compare «minishowcase | gallery», il nome del programma.</p>
+        </div>
+        <div class="tech-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h7l4 4v13a1 1 0 01-1 1H7a1 1 0 01-1-1V4a1 1 0 011-1z"/><path d="M9 12h6M9 15.5h4"/></svg>
+          <h4>Nessuna descrizione per Google</h4>
+          <p>Manca il testo che Google mostra sotto il titolo nei risultati di ricerca.</p>
+        </div>
+        <div class="tech-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.2 2.3 3.4 5.3 3.4 8.5s-1.2 6.2-3.4 8.5c-2.2-2.3-3.4-5.3-3.4-8.5S9.8 5.8 12 3.5z"/></svg>
+          <h4>Il sito non dichiara la propria lingua</h4>
+          <p>Manca l'attributo che dice a Google e agli screen reader che il contenuto è in italiano.</p>
+        </div>
+        <div class="tech-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9v4m0 3.5h.01M10.5 3.5L2.7 18a1.6 1.6 0 001.4 2.4h16a1.6 1.6 0 001.4-2.4L13.5 3.5a1.6 1.6 0 00-3 0z"/></svg>
+          <h4>Codice di 10–20 anni fa</h4>
+          <p>jQuery 1.11.3 (2015), una versione con vulnerabilità di sicurezza note, e script di Dreamweaver dei primi anni 2000. Mai aggiornati.</p>
+        </div>
+        <div class="tech-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M7 10h6M7 13.5h4"/></svg>
+          <h4>Le novità sono solo immagini</h4>
+          <p>I banner della pagina Novità non contengono testo: per Google sono pagine vuote.</p>
+        </div>
+        <div class="tech-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/><path d="M4 4l16 16"/></svg>
+          <h4>9 immagini su 10 senza testo alternativo</h4>
+          <p>Nella home, quasi tutte le immagini sono invisibili per Google Immagini e per chi usa uno screen reader.</p>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M4 12h16"/></svg>
+        Scorri per vedere il confronto completo
+      </div>
+      <div class="compare-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Criterio</th>
+              <th>La Sala</th>
+              <th>Pasticceria Vercesi</th>
+              <th>Pasticceria Angoloso</th>
+              <th>Delizie Tortonesi</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Valutazione Google</td>
+              <td class="flag-good">4,8 (133)</td>
+              <td>4,5 (652)</td>
+              <td>4,4 (179)</td>
+              <td>4,4 (539)</td>
+            </tr>
+            <tr>
+              <td>Sito leggibile dal telefono</td>
+              <td class="flag-bad">No, si apre tagliato</td>
+              <td class="flag-good">Sì</td>
+              <td class="flag-good">Sì</td>
+              <td class="flag-bad">Il sito non si apre (Flash)</td>
+            </tr>
+            <tr>
+              <td>Le torte sul sito</td>
+              <td class="flag-bad">Galleria invisibile a Google</td>
+              <td class="flag-good">Pagina dedicata</td>
+              <td class="flag-good">Sì</td>
+              <td class="flag-bad">Il sito non si apre</td>
+            </tr>
+            <tr>
+              <td>WhatsApp sul sito</td>
+              <td>No</td>
+              <td>No</td>
+              <td>No</td>
+              <td>—</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="verdict">
+        <p>La Sala ha la valutazione più alta dei quattro. Vercesi e Angoloso hanno già un sito moderno che parla di torte; nessuno ha WhatsApp. Per La Sala il vantaggio c'è già, nelle recensioni e nelle torte: manca solo un sito che lo faccia vedere.</p>
+      </div>
+      <p class="compare-note"><strong>Nota:</strong> i concorrenti di questo confronto li abbiamo scelti noi, in base alla visibilità online: sono quelli che compaiono nelle ricerche su Google a Tortona. Potrebbero non essere quelli che voi considerate i vostri concorrenti diretti. In quel caso, diteci quali sono e rifacciamo l'analisi.</p>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <span class="eyebrow">[La proposta]</span>
+      <div class="links-grid">
+        <div class="link-card">
+          <a class="link-card-top" href="https://matecoelho.github.io/demo-gelateria-la-sala/" target="_blank" rel="noopener">
+            <span class="tag">Demo</span>
+            <h3>Come potrebbe essere il nuovo sito</h3>
+            <span class="go">Apri la demo ↗</span>
+          </a>
+          <div class="browser-frame">
+            <div class="browser-chrome">
+              <div class="browser-bar">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <span class="browser-url">matecoelho.github.io/demo-gelateria-la-sala</span>
+              </div>
+              <div class="browser-body" data-autoscroll>
+                <iframe src="https://matecoelho.github.io/demo-gelateria-la-sala/" loading="lazy" tabindex="-1" aria-hidden="true" title="Anteprima demo"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <span class="eyebrow">[Cosa cambia con il nuovo sito]</span>
+      <h2 class="section-lead">Tutto quello che avete già, finalmente visibile.</h2>
+      <div class="card-grid">
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.47 5.24 5.78.58-4.3 3.93 1.18 5.68-5.13-2.94-5.13 2.94 1.18-5.68-4.3-3.93 5.78-.58L12 3.5z"/></svg>
+            <span class="tcard-num">[ 01 ]</span>
+          </div>
+          <h3>La fiducia delle famiglie, in primo piano</h3>
+          <p>Il 4,8 e le parole vere dei clienti diventano una sezione del sito: chi non vi conosce ancora legge quello che scrive chi vi sceglie <span class="mark mark-underline">da anni<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 22 4, 50 13, 70 7 C 82 4, 90 9, 98 6"/></svg></span>.</p>
+        </div>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.1c-.24.68-1.4 1.33-1.93 1.4-.49.07-1.11.1-1.79-.11a16.3 16.3 0 01-1.62-.6c-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.08.99-2.37.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.29.29-.12.57.16.28.73 1.2 1.57 1.95 1.08.96 1.98 1.26 2.27 1.4.28.14.45.12.62-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.62-.14.26.1 1.63.77 1.9.91.28.14.46.21.53.33.07.12.07.68-.17 1.35z"/></svg>
+            <span class="tcard-num">[ 02 ]</span>
+          </div>
+          <h3>Scegli la festa, ordina su WhatsApp</h3>
+          <p>Battesimo, Comunione e Cresima, Compleanni, Lauree, Matrimoni, Feste dell'anno, Pensione: ogni occasione ha il suo pulsante <span class="mark mark-circle">WhatsApp<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path d="M6 30 C 0 12, 24 1, 50 2 C 78 3, 98 15, 90 29 C 84 42, 56 48, 32 45 C 12 43, 2 38, 6 30 Z"/></svg></span>. Il cliente vi scrive sapendo già cosa vuole.</p>
+        </div>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5.5" width="13" height="13" rx="1.5"/><path d="M16 10l5-3v10l-5-3"/></svg>
+            <span class="tcard-num">[ 03 ]</span>
+          </div>
+          <h3>La torta che nasce, in video</h3>
+          <p>In apertura, il video di una torta decorata a mano nel vostro laboratorio. E i video del canale YouTube entrano nel sito, invece di restare separati.</p>
+        </div>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="1.5"/><path d="M11 18.5h2"/></svg>
+            <span class="tcard-num">[ 04 ]</span>
+          </div>
+          <h3>Pensato prima di tutto per il telefono</h3>
+          <p>Niente più pagina tagliata: il sito si adatta allo schermo, dal telefono più piccolo al computer.</p>
+        </div>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 12.5l3 3 8-8M20 6.5l-8.5 8.5"/></svg>
+            <span class="tcard-num">[ 05 ]</span>
+          </div>
+          <h3>Google capisce chi siete</h3>
+          <p>Titolo con il nome della gelateria e la città, descrizione vera per i risultati di ricerca, lingua dichiarata. Già presenti nella demo.</p>
+        </div>
+        <div class="tcard">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/></svg>
+            <span class="tcard-num">[ 06 ]</span>
+          </div>
+          <h3>Pronto anche per la ricerca del futuro (GEO e AEO)</h3>
+          <p>Il sito viene costruito per essere trovato non solo su Google, ma anche dalle intelligenze artificiali (ChatGPT, AI Overview di Google) quando qualcuno chiede "dove ordino una torta di compleanno a Tortona?". Incluso di serie, senza costo aggiuntivo.</p>
+        </div>
+        <div class="tcard span-2">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg>
+            <span class="tcard-num">[ 07 ]</span>
+          </div>
+          <h3>Privacy e cookie in regola</h3>
+          <p>Informativa privacy e avviso cookie aggiornati, preparati prima che il sito vada online.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <span class="eyebrow">[Perché nessun abbonamento]</span>
+      <h2 class="section-lead">Pagate solo la creazione. Il sito è vostro. Senza vincoli di fedeltà.</h2>
+      <p class="lead-line">Non c'è canone mensile. Punto.</p>
+
+      <div class="vs-grid">
+        <div class="vs-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="1.5"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>
+          <h4>Come lavora un'agenzia tradizionale</h4>
+          <p>Pagamento iniziale per la creazione, poi un canone mensile per continuare a esistere online — spesso con un contratto di fedeltà di 12 mesi. Se smettete di pagare il canone, il sito scompare. Anche dopo anni di pagamenti fatti.</p>
+        </div>
+        <div class="vs-card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V8l8-5 8 5v13"/><path d="M9 21v-7h6v7"/></svg>
+          <h4>Come lavoriamo noi</h4>
+          <p>Pagate solo la creazione del sito. Dominio e hosting li pagate direttamente al fornitore reale — nessun canone verso Coeso Digital per continuare a esistere online.</p>
+        </div>
+      </div>
+
+      <div class="stat-panel">
+        <div class="tcard-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5a4 4 0 100 7M8 10.5h6M8 13.5h5"/></svg>
+          <span class="tcard-num">[ COSTI REALI ]</span>
+        </div>
+        <h3>Quanto costano davvero dominio e hosting?</h3>
+        <p>Tra <strong>40 e 230 euro all'anno</strong> (circa 3-19 euro al mese), pagati direttamente al fornitore — nessun canone verso Coeso Digital.</p>
+      </div>
+
+      <div class="maint-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 6.5l3 3-8 8-4 1 1-4 8-8z"/><path d="M17 4l3 3"/></svg>
+        <p><strong>E la manutenzione?</strong> Se in futuro serve modificare, aggiungere, togliere o inserire qualsiasi informazione o intervento, basta una richiesta puntuale — si paga solo un valore minimo orario, non un canone fisso per un lavoro che nella maggior parte dei mesi non c'è nemmeno.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark">
+    <div class="wrap">
+      <span class="eyebrow">[Cosa succede dopo]</span>
+      <div class="timeline">
+        <div class="tl-item">
+          <span class="tl-num">[ FASE 1 ]</span>
+          <h3>Approvazione</h3>
+          <p>Fate tutte le domande, chiarite ogni dubbio e approvate il progetto.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-num">[ FASE 2 ]</span>
+          <h3>Revisione insieme e foto finali</h3>
+          <p>Rivediamo insieme ogni sezione del sito e completiamo le foto che mancano, a partire dal gusto Quella.</p>
+        </div>
+        <div class="tl-item">
+          <span class="tl-num">[ FASE 3 ]</span>
+          <h3>Pubblicazione</h3>
+          <p>Il sito va online sul vostro dominio.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="dark cta">
+    <div class="wrap">
+      <h2>Scrivici su WhatsApp</h2>
+      <p>Nessun modulo da compilare. Scrivi direttamente su WhatsApp.</p>
+      <a class="wa-btn" href="https://wa.me/393479780606?text=Ciao%2C%20ho%20visto%20la%20proposta%20di%20Coeso%20Digital%20per%20la%20Gelateria%20La%20Sala." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2.05 22l5.25-1.38a9.9 9.9 0 004.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.1c-.24.68-1.4 1.33-1.93 1.4-.49.07-1.11.1-1.79-.11a16.3 16.3 0 01-1.62-.6c-2.85-1.23-4.71-4.1-4.85-4.29-.14-.19-1.16-1.54-1.16-2.94 0-1.4.73-2.08.99-2.37.26-.28.57-.35.76-.35h.55c.18 0 .42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.29.36-.42.48-.14.14-.29.29-.12.57.16.28.73 1.2 1.57 1.95 1.08.96 1.98 1.26 2.27 1.4.28.14.45.12.62-.07.16-.19.7-.82.89-1.1.19-.28.37-.23.62-.14.26.1 1.63.77 1.9.91.28.14.46.21.53.33.07.12.07.68-.17 1.35z"/></svg>
+        Scrivi su WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>Coeso Digital — Materiale riservato, non indicizzato</p>
+    </div>
+  </footer>
+
+<script>
+  (function(){
+    var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    var frames = document.querySelectorAll('.browser-body[data-autoscroll]');
+
+    frames.forEach(function(wrap){
+      var iframe = wrap.querySelector('iframe');
+      if (!iframe) return;
+
+      var scrollY = 0;
+      var direction = 1;
+      var maxScroll = 0;
+      var pauseUntil = 0;
+      var inView = false;
+      var speed = 0.35;
+
+      function measure(){
+        try {
+          var doc = iframe.contentDocument;
+          if (doc && doc.documentElement) {
+            maxScroll = Math.max(0, doc.documentElement.scrollHeight - iframe.clientHeight);
+          }
+        } catch(e) { /* same-origin expected; ignore if it ever fails */ }
+      }
+
+      iframe.addEventListener('load', function(){
+        scrollY = 0;
+        direction = 1;
+        measure();
+        setTimeout(measure, 700);
+        setTimeout(measure, 1800);
+        pauseUntil = performance.now() + 900;
+      });
+
+      var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){ inView = entry.isIntersecting; });
+      }, { threshold: 0.15 });
+      observer.observe(wrap);
+
+      function tick(now){
+        requestAnimationFrame(tick);
+        if (!inView || maxScroll <= 0 || now < pauseUntil) return;
+
+        scrollY += direction * speed;
+
+        if (scrollY >= maxScroll) {
+          scrollY = maxScroll;
+          direction = -1;
+          pauseUntil = now + 1800;
+        } else if (scrollY <= 0) {
+          scrollY = 0;
+          direction = 1;
+          pauseUntil = now + 1300;
+        }
+
+        try { iframe.contentWindow.scrollTo(0, scrollY); } catch(e){}
+      }
+
+      requestAnimationFrame(tick);
+    });
+  })();
+</script>
+
+</body>
+</html>
