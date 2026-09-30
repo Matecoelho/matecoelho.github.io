@@ -243,6 +243,24 @@
   .compare-table td.flag-bad{color:#a4302f; font-weight:600;}
   .compare-table td.flag-good{color:#3f6b3f; font-weight:600;}
 
+  .rank-map{margin:26px 0 0; max-width:320px;}
+  .rank-cap, .rank-legend{font-size:.72rem; letter-spacing:.03em; color:#8f8a7a; margin:0;}
+  .tcard p.rank-dir{font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:#8f8a7a; text-align:center; margin:6px 0;}
+  .tcard-rank{display:grid; grid-template-columns:1fr 320px; gap:18px 48px; align-items:start;}
+  .tcard-rank .tcard-head{grid-column:1 / -1; margin-bottom:0;}
+  .tcard-rank .rank-map{margin:0;}
+  @media (max-width:860px){.tcard-rank{grid-template-columns:1fr; gap:24px;}}
+  .rank-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; padding:14px; margin:8px 0; border:1px solid #cfcabc; background:#f4f1ea;}
+  .rank-dot{display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; justify-self:center; border-radius:50%; font-size:.78rem; font-weight:600; font-variant-numeric:tabular-nums;}
+  .rank-top{background:#3f6b3f; color:#fff;}
+  .rank-mid{background:#d9b25c; color:#1a1912;}
+  .rank-low{background:var(--red); color:#fff;}
+  .rank-here{box-shadow:0 0 0 3px #f4f1ea, 0 0 0 5px #1a1912;}
+  .tcard p.rank-legend{font-size:.72rem; line-height:1.9; color:#8f8a7a; margin:8px 0 0;}
+  .rank-legend .rank-dot{width:10px; height:10px; margin:0 4px 0 8px; vertical-align:middle;}
+  .rank-legend .rank-dot:first-child{margin-left:0;}
+  .rank-legend .rank-here{box-shadow:0 0 0 2px #f4f1ea, 0 0 0 3px #1a1912;}
+  @media (max-width:720px){.rank-dot{width:40px;height:40px;}}
   .verdict{margin-top:36px; padding:26px 28px; border-left:3px solid var(--red); background:#f4f1ea; max-width:760px;}
   .verdict p{margin:0; font-size:1rem; line-height:1.65; color:#1a1912;}
   section.dark .verdict{background:#141311;}
@@ -473,20 +491,29 @@
         <div class="tcard">
           <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
           <div class="tcard-head">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.3" cy="10.3" r="6.3"/><path d="M19.5 19.5l-5.2-5.2"/></svg>
-            <span class="tcard-num">[ 02 ]</span>
-          </div>
-          <h3>«Torte compleanno Tortona»: La Sala non compare</h3>
-          <p>Nella ricerca da smartphone (27 settembre 2026) la gelateria non è tra i primi sei risultati. Eppure in galleria ci sono <span class="mark mark-underline">oltre 300 torte di compleanno<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 20 12, 44 5, 70 10 C 82 12, 90 8, 98 9"/></svg></span>.</p>
-        </div>
-        <div class="tcard">
-          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
-          <div class="tcard-head">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="2.5" width="10" height="19" rx="1.5"/><path d="M11 18.5h2"/></svg>
-            <span class="tcard-num">[ 03 ]</span>
+            <span class="tcard-num">[ 02 ]</span>
           </div>
           <h3>Dal telefono il sito si apre tagliato</h3>
           <p>La pagina è larga <span class="mark mark-underline">960 pixel<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 22 4, 50 13, 70 7 C 82 4, 90 9, 98 6"/></svg></span>: sullo schermo di uno smartphone bisogna spostarla di lato per leggerla. Il menu è fatto di immagini che cambiano al passaggio del mouse, che sul telefono non esiste.</p>
+        </div>
+        <div class="tcard span-2 tcard-rank">
+          <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
+          <div class="tcard-head">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.3" cy="10.3" r="6.3"/><path d="M19.5 19.5l-5.2-5.2"/></svg>
+            <span class="tcard-num">[ 03 ]</span>
+          </div>
+          <div class="rank-text">
+          <h3>«Torte compleanno tortona»: prima gli altri</h3>
+          <p>Abbiamo simulato questa ricerca da 20 punti di Tortona (30 settembre 2026). La Sala è tra i primi tre risultati solo in <span class="mark mark-underline">5 punti su 20<svg viewBox="0 0 100 16" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 C 20 12, 44 5, 70 10 C 82 12, 90 8, 98 9"/></svg></span>, e mai al primo posto. Dal centro e dal nord della città scende fino al 12° posto. Ai primi posti: Sweet &amp; Cake Design (prima in 11 punti su 20) e Sena Pasticceria. Eppure in galleria La Sala ha oltre 300 torte di compleanno.</p>
+          </div>
+          <figure class="rank-map">
+            <figcaption class="rank-cap">Posizione di La Sala su Google, punto per punto</figcaption>
+            <p class="rank-dir">Nord</p>
+            <div class="rank-grid" role="img" aria-label="Griglia di 20 punti su Tortona: La Sala è tra i primi 3 in 5 punti, nelle zone a sud vicino al negozio; al centro e a nord scende fino al 12° posto."><span class="rank-dot rank-mid">4°</span><span class="rank-dot rank-mid">10°</span><span class="rank-dot rank-low">12°</span><span class="rank-dot rank-low">11°</span><span class="rank-dot rank-mid">4°</span><span class="rank-dot rank-mid">7°</span><span class="rank-dot rank-low">11°</span><span class="rank-dot rank-mid">9°</span><span class="rank-dot rank-mid">4°</span><span class="rank-dot rank-top rank-here">2°</span><span class="rank-dot rank-mid">4°</span><span class="rank-dot rank-mid">4°</span><span class="rank-dot rank-mid">4°</span><span class="rank-dot rank-top">3°</span><span class="rank-dot rank-mid">4°</span><span class="rank-dot rank-mid">4°</span><span class="rank-dot rank-top">3°</span><span class="rank-dot rank-mid">4°</span><span class="rank-dot rank-top">3°</span><span class="rank-dot rank-top">3°</span></div>
+            <p class="rank-dir">Sud</p>
+            <p class="rank-legend"><span class="rank-dot rank-top"></span>tra i primi 3 <span class="rank-dot rank-mid"></span>4°–10° <span class="rank-dot rank-low"></span>oltre il 10° · <span class="rank-dot rank-top rank-here"></span>il negozio</p>
+          </figure>
         </div>
         <div class="tcard">
           <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
@@ -497,7 +524,7 @@
           <h3><span class="mark mark-circle">Oltre 700<svg viewBox="0 0 100 50" preserveAspectRatio="none" aria-hidden="true"><path d="M6 30 C 0 12, 24 1, 50 2 C 78 3, 98 15, 90 29 C 84 42, 56 48, 32 45 C 12 43, 2 38, 6 30 Z"/></svg></span> torte in galleria, che Google non vede</h3>
           <p>Compleanni, battesimi, comunioni, matrimoni, lauree: un catalogo enorme. Ma la galleria usa un programma dei primi anni 2000, i cui link non portano a pagine vere: per Google, nessuna di queste foto esiste.</p>
         </div>
-        <div class="tcard span-2">
+        <div class="tcard">
           <span class="corner tl">×</span><span class="corner tr">×</span><span class="corner bl">×</span><span class="corner br">×</span>
           <div class="tcard-head">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a1 1 0 01-1 1A16 16 0 014 5a1 1 0 011-1z"/></svg>
@@ -552,48 +579,55 @@
             <tr>
               <th>Criterio</th>
               <th>La Sala</th>
+              <th>Sweet &amp; Cake Design</th>
+              <th>Sena Pasticceria</th>
               <th>Pasticceria Vercesi</th>
-              <th>Pasticceria Angoloso</th>
-              <th>Delizie Tortonesi</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>Valutazione Google</td>
               <td class="flag-good">4,8 (133)</td>
+              <td>4,7 (37)</td>
+              <td>4,7 (63)</td>
               <td>4,5 (652)</td>
-              <td>4,4 (179)</td>
-              <td>4,4 (539)</td>
+            </tr>
+            <tr>
+              <td>Categoria principale su Google</td>
+              <td class="flag-bad">Gelateria</td>
+              <td>Pasticceria</td>
+              <td>Pasticceria</td>
+              <td>Pasticceria</td>
+            </tr>
+            <tr>
+              <td>Tra i primi 3 per «torte compleanno tortona»</td>
+              <td class="flag-bad">5 punti su 20</td>
+              <td class="flag-good">19 su 20</td>
+              <td class="flag-good">18 su 20</td>
+              <td>1 su 20</td>
             </tr>
             <tr>
               <td>Sito leggibile dal telefono</td>
               <td class="flag-bad">No, si apre tagliato</td>
               <td class="flag-good">Sì</td>
-              <td class="flag-good">Sì</td>
-              <td class="flag-bad">Il sito non si apre (Flash)</td>
-            </tr>
-            <tr>
-              <td>Le torte sul sito</td>
-              <td class="flag-bad">Galleria invisibile a Google</td>
-              <td class="flag-good">Pagina dedicata</td>
-              <td class="flag-good">Sì</td>
               <td class="flag-bad">Il sito non si apre</td>
+              <td class="flag-good">Sì</td>
             </tr>
             <tr>
               <td>WhatsApp sul sito</td>
               <td>No</td>
-              <td>No</td>
-              <td>No</td>
+              <td class="flag-good">Sì</td>
               <td>—</td>
+              <td>No</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <div class="verdict">
-        <p>La Sala ha la valutazione più alta dei quattro. Vercesi e Angoloso hanno già un sito moderno che parla di torte; nessuno ha WhatsApp. Per La Sala il vantaggio c'è già, nelle recensioni e nelle torte: manca solo un sito che lo faccia vedere.</p>
+        <p>La Sala ha più recensioni e la valutazione più alta. Eppure, nella ricerca delle torte di compleanno, vince Sweet &amp; Cake Design: ha meno di un terzo delle vostre recensioni, ma per Google è una pasticceria e ha già un sito dedicato alle torte con WhatsApp. Per Google, La Sala è prima di tutto una gelateria: è la sua categoria principale. Il prodotto che i vostri clienti ordinano di più, le torte, oggi non si vede né sul sito né nella scheda.</p>
       </div>
-      <p class="compare-note"><strong>Nota:</strong> i concorrenti di questo confronto li abbiamo scelti noi, in base alla visibilità online: sono quelli che compaiono nelle ricerche su Google a Tortona. Potrebbero non essere quelli che voi considerate i vostri concorrenti diretti. In quel caso, diteci quali sono e rifacciamo l'analisi.</p>
+      <p class="compare-note"><strong>Nota:</strong> i concorrenti di questo confronto li abbiamo scelti noi, in base alla visibilità online: sono quelli che compaiono ai primi posti nella simulazione di ricerca del 30 settembre 2026 a Tortona. Potrebbero non essere quelli che voi considerate i vostri concorrenti diretti. In quel caso, diteci quali sono e rifacciamo l'analisi.</p>
     </div>
   </section>
 
