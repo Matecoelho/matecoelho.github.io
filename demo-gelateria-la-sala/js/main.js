@@ -217,4 +217,19 @@
   document.fonts.ready.then(measure);
   measure();
   updatePlayback();
+
+  // Third-party embeds (YouTube, Google Maps) load only after a click: no cookies before the visitor chooses.
+  document.querySelectorAll('.consent-embed').forEach(box => {
+    const trigger = box.querySelector('button');
+    if (!trigger) return;
+    trigger.addEventListener('click', () => {
+      const frame = document.createElement('iframe');
+      frame.src = box.dataset.embedSrc;
+      frame.title = box.dataset.embedTitle;
+      frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      frame.referrerPolicy = 'strict-origin-when-cross-origin';
+      box.replaceChildren(frame);
+      frame.focus();
+    });
+  });
 })();
